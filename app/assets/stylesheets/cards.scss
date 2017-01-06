@@ -1,0 +1,46 @@
+.card__user {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 10px 10px 0;
+  width: 100%;
+
+  .avatar {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  h4 {
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+  }
+}
+
+.card__user-tiny {
+  padding-left: 40px;
+  min-height: 40px;
+}
+
+.card__user-thumb {
+  padding-left: 65px;
+  min-height: 65px;
+}
+
+.card__user-large {
+  padding-left: 90px;
+  min-height: 90px;
+}
+
+.card__actions {
+  margin-top: 5px;
+  a {
+    margin-right: 10px;
+  }
+}
+
+.card__close {
+  position: absolute;
+  top: 0;
+  right: 3px;
+}

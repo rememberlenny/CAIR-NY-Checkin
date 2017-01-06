@@ -1,0 +1,38 @@
+- resource.email = params[:email] unless resource.email.present?
+
+.auth__form
+  - signup_link = link_to I18n.t('auth.signup.link'), new_user_registration_path
+  %h2.title
+    = I18n.t 'auth.login.title'
+    %small
+      = I18n.t('auth.login.help', signup_link: signup_link).html_safe
+
+  = render 'authentications/providers', flow: 'login', icons: true, color: true
+
+  .auth__or
+    %hr/
+    %span or
+
+  - if @failed_login.present?
+    .alert-box.warning{data: {alert: ''}}
+      = @failed_login
+      %a.close{href: '#', 'aria-hidden' => true} &times;
+
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, as: :hidden, input_html: {value: true}
+    = f.input :email, autofocus: true, required: true
+
+    %div{class: resource.email.blank? ? 'hide' : ''}
+      - if devise_mapping.recoverable?
+        %label.right
+          = link_to I18n.t('auth.forgot.prompt'), new_password_path(resource_name)
+      = f.input :password, required: true do |input|
+        = f.input_field :password, required: true, autocomplete: 'off'
+      = f.button :submit, I18n.t('auth.login.link')
+
+  = render 'users/shared/links', disable_signup: true
+
+- content_for :on_ready do
+  $('input[name="user[email]"]').on('click keydown', function(){$(this).closest('form').find('.hide').slideDown('slow')});
+  var $alert = $('.alert-box,.alert'); if ($alert.length) { $.scrollTo($alert, 300); }

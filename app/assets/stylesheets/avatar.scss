@@ -1,0 +1,61 @@
+.avatar {
+  display: inline-block;
+  background-color: $avatar-background-color;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+
+  &.tiny {
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    img {
+      max-width: 24px;
+    }
+    .default {
+      font-size: 26px;
+      margin-top: 0;
+    }
+  }
+  &.thumb {
+    width: 48px;
+    height: 48px;
+    line-height: 44px;
+    img {
+      max-width: 48px;
+    }
+    .default {
+      font-size: 50px;
+      margin-top: 2px;
+    }
+  }
+  &.large {
+    width: 73px;
+    height: 73px;
+    line-height: 70px;
+    img {
+      max-width: 73px;
+    }
+    .default {
+      font-size: 80px;
+      margin-top: 0;
+    }
+  }
+
+  &.error {
+    img {
+      display: none;
+    }
+    .default {
+      display: inline-block;
+    }
+  }
+
+  img {
+    border: none;
+  }
+  .default {
+    display: none;
+    color: $avatar-default-color;
+  }
+}

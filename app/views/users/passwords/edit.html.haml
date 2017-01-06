@@ -1,0 +1,18 @@
+.auth__form
+  - if resource_has_error? resource, :reset_password_token, :invalid
+    .alert-box.warning{data: {alert: ''}}
+      %h4= I18n.t 'auth.reset.invalid_title'
+      %p= I18n.t 'auth.reset.invalid_message'
+      %a.close{href: '#', 'aria-hidden' => true} &times;
+    %p= link_to I18n.t('auth.forgot.submit'), new_password_path(resource_name), class: 'button'
+
+  - else
+    %h2= I18n.t 'auth.reset.link'
+
+    = simple_form_for resource, as: resource_name, url: password_path(resource_name), method: :put do |f|
+      = devise_error_messages!
+      = f.hidden_field :reset_password_token
+      = f.input :password, autofocus: true, required: true, hint: false
+      = f.button :submit, I18n.t('auth.reset.submit')
+
+  = render "users/shared/links"

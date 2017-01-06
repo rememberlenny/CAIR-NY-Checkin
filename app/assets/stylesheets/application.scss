@@ -1,0 +1,37 @@
+//
+// Prefer imports over require
+// http://pivotallabs.com/structure-your-sass-files-with-import/
+//
+
+//= require_self
+//= require foundation_and_overrides
+
+
+// Core
+@import "variables";
+@import "foundation_and_overrides";
+@import "icons_social";
+@import "auth";
+@import "avatar";
+@import "cards";
+@import "footer";
+@import "hacks";
+
+// Plugins
+@import 'nprogress';
+
+
+
+//
+// Minor Tweaks
+//
+
+.top-bar {
+  margin-bottom: 20px;
+}
+
+// Postion loading spinner at bottom right
+#nprogress .spinner {
+  bottom: 15px;
+  top: auto;
+}
