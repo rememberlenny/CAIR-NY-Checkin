@@ -18,6 +18,7 @@ gem "terminal-notifier", group: [:development]
 
 gem "acts-as-taggable-on"
 gem "dotenv-rails", require: "dotenv/rails-now"
+gem "instagram"
 
 gem "country_select"
 gem "fastimage"
