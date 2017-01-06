@@ -8,15 +8,13 @@ if defined? Sidekiq
   Sidekiq.configure_server do |config|
     config.redis = {
       url: redis_url,
-      namespace: 'workers',
-      size: 2
+      namespace: 'workers'
     }
   end
   Sidekiq.configure_client do |config|
     config.redis = {
       url: redis_url,
-      namespace: 'workers',
-      size: 1
+      namespace: 'workers'
     }
   end
 
