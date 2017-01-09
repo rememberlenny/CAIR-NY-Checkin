@@ -36,3 +36,8 @@
   bottom: 15px;
   top: auto;
 }
+
+.rails_admin .navbar .nav > li {
+    position: relative;
+    display: inline-block;
+}
