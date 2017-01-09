@@ -2374,7 +2374,7 @@
 
 			.image.phone .inner, .image.phone:before, .image.phone:after {
 				display: block;
-				border: solid 2px rgba(255, 255, 255, 0.25);
+				border: solid 2px rgba(49, 37, 37, 0.25);
 			}
 
 			.image.phone .inner {
@@ -2393,7 +2393,7 @@
 					width: 2em;
 					height: 0.25em;
 					border-radius: 0.5em;
-					background: rgba(255, 255, 255, 0.25);
+					background: rgba(49, 37, 37, 0.25);
 				}
 
 				.image.phone .inner:after {
@@ -2402,7 +2402,7 @@
 					width: 2em;
 					height: 2em;
 					border-radius: 100%;
-					border: solid 2px rgba(255, 255, 255, 0.25);
+					border: solid 2px rgba(49, 37, 37, 0.25);
 				}
 
 			.image.phone:before, .image.phone:after {
@@ -2969,7 +2969,7 @@
 			.wrapper.style1 .button {
 				background-color: transparent;
 				color: #ffffff !important;
-				box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+				box-shadow: inset 0 0 0 2px rgba(49, 37, 37, 0.25);
 			}
 
 				.wrapper.style1 input[type="submit"]:hover,
@@ -3009,7 +3009,7 @@
 			.wrapper.style1 textarea {
 				color: inherit;
 				background-color: rgba(255, 255, 255, 0.075);
-				border-color: rgba(255, 255, 255, 0.25);
+				border-color: rgba(49, 37, 37, 0.25);
 			}
 
 				.wrapper.style1 input[type="text"]:focus,
@@ -3022,7 +3022,7 @@
 				}
 
 			.wrapper.style1 .select-wrapper:before {
-				color: rgba(255, 255, 255, 0.25);
+				color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -3033,7 +3033,7 @@
 				.wrapper.style1 input[type="checkbox"] + label:before,
 				.wrapper.style1 input[type="radio"] + label:before {
 					background-color: rgba(255, 255, 255, 0.075);
-					border-color: rgba(255, 255, 255, 0.25);
+					border-color: rgba(49, 37, 37, 0.25);
 				}
 
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
@@ -3074,7 +3074,7 @@
 			}
 
 			.wrapper.style1 .image {
-				box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(255, 255, 255, 0.25);
+				box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(49, 37, 37, 0.25);
 			}
 
 				.wrapper.style1 .image.phone {
@@ -3082,23 +3082,23 @@
 				}
 
 					.wrapper.style1 .image.phone .inner, .wrapper.style1 .image.phone:before, .wrapper.style1 .image.phone:after {
-						border-color: rgba(255, 255, 255, 0.25);
+						border-color: rgba(49, 37, 37, 0.25);
 					}
 
 					.wrapper.style1 .image.phone .inner:before {
-						background: rgba(255, 255, 255, 0.25);
+						background: rgba(49, 37, 37, 0.25);
 					}
 
 					.wrapper.style1 .image.phone .inner:after {
-						border-color: rgba(255, 255, 255, 0.25);
+						border-color: rgba(49, 37, 37, 0.25);
 					}
 
 			.wrapper.style1 ul.alt > li {
-				border-top-color: rgba(255, 255, 255, 0.25);
+				border-top-color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 table tbody tr {
-				border-color: rgba(255, 255, 255, 0.25);
+				border-color: rgba(49, 37, 37, 0.25);
 			}
 
 				.wrapper.style1 table tbody tr:nth-child(2n + 1) {
@@ -3110,15 +3110,15 @@
 			}
 
 			.wrapper.style1 table thead {
-				border-bottom-color: rgba(255, 255, 255, 0.25);
+				border-bottom-color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 table tfoot {
-				border-top-color: rgba(255, 255, 255, 0.25);
+				border-top-color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 table.alt tbody tr td {
-				border-color: rgba(255, 255, 255, 0.25);
+				border-color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 input, .wrapper.style1 select, .wrapper.style1 textarea {
@@ -3140,16 +3140,16 @@
 			}
 
 			.wrapper.style1 blockquote {
-				border-left-color: rgba(255, 255, 255, 0.25);
+				border-left-color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 code {
 				background: rgba(255, 255, 255, 0.075);
-				border-color: rgba(255, 255, 255, 0.25);
+				border-color: rgba(49, 37, 37, 0.25);
 			}
 
 			.wrapper.style1 hr {
-				border-bottom-color: rgba(255, 255, 255, 0.25);
+				border-bottom-color: rgba(49, 37, 37, 0.25);
 			}
 
 		.wrapper.style2 {
@@ -3627,8 +3627,8 @@
 /* Header */
 
 	#header {
-		background-color: #4696e5;
-		color: #d0e4f8;
+		background-color: #ffec8f;
+		color: #666;
 		padding: 4.5em 0 2.5em 0 ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
@@ -3656,8 +3656,8 @@
 		#header button,
 		#header .button {
 			background-color: transparent;
-			color: #ffffff !important;
-			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+			color: #48c734 !important;
+			box-shadow: inset 0 0 0 2px rgba(49, 37, 37, 0.25);
 		}
 
 			#header input[type="submit"]:hover,
@@ -3683,7 +3683,7 @@
 			#header .button.special {
 				box-shadow: none;
 				background-color: #ffffff;
-				color: #4696e5 !important;
+				color: #48c734 !important;
 			}
 
 		#header label {
@@ -3697,7 +3697,7 @@
 		#header textarea {
 			color: inherit;
 			background-color: rgba(255, 255, 255, 0.075);
-			border-color: rgba(255, 255, 255, 0.25);
+			border-color: rgba(49, 37, 37, 0.25);
 		}
 
 			#header input[type="text"]:focus,
@@ -3710,7 +3710,7 @@
 			}
 
 		#header .select-wrapper:before {
-			color: rgba(255, 255, 255, 0.25);
+			color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header input[type="checkbox"] + label,
@@ -3721,7 +3721,7 @@
 			#header input[type="checkbox"] + label:before,
 			#header input[type="radio"] + label:before {
 				background-color: rgba(255, 255, 255, 0.075);
-				border-color: rgba(255, 255, 255, 0.25);
+				border-color: rgba(49, 37, 37, 0.25);
 			}
 
 		#header input[type="checkbox"]:checked + label:before,
@@ -3762,7 +3762,7 @@
 		}
 
 		#header .image {
-			box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(255, 255, 255, 0.25);
+			box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(49, 37, 37, 0.25);
 		}
 
 			#header .image.phone {
@@ -3770,23 +3770,23 @@
 			}
 
 				#header .image.phone .inner, #header .image.phone:before, #header .image.phone:after {
-					border-color: rgba(255, 255, 255, 0.25);
+					border-color: rgba(49, 37, 37, 0.25);
 				}
 
 				#header .image.phone .inner:before {
-					background: rgba(255, 255, 255, 0.25);
+					background: rgba(49, 37, 37, 0.25);
 				}
 
 				#header .image.phone .inner:after {
-					border-color: rgba(255, 255, 255, 0.25);
+					border-color: rgba(49, 37, 37, 0.25);
 				}
 
 		#header ul.alt > li {
-			border-top-color: rgba(255, 255, 255, 0.25);
+			border-top-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header table tbody tr {
-			border-color: rgba(255, 255, 255, 0.25);
+			border-color: rgba(49, 37, 37, 0.25);
 		}
 
 			#header table tbody tr:nth-child(2n + 1) {
@@ -3798,15 +3798,15 @@
 		}
 
 		#header table thead {
-			border-bottom-color: rgba(255, 255, 255, 0.25);
+			border-bottom-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header table tfoot {
-			border-top-color: rgba(255, 255, 255, 0.25);
+			border-top-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header table.alt tbody tr td {
-			border-color: rgba(255, 255, 255, 0.25);
+			border-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header input, #header select, #header textarea {
@@ -3816,7 +3816,7 @@
 		#header a {
 			color: inherit;
 			border-bottom-color: rgba(255, 255, 255, 0.5);
-			color: #ffffff;
+			color: #666;
 		}
 
 		#header strong, #header b {
@@ -3824,20 +3824,20 @@
 		}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #ffffff;
+			color: #666;
 		}
 
 		#header blockquote {
-			border-left-color: rgba(255, 255, 255, 0.25);
+			border-left-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: rgba(255, 255, 255, 0.25);
+			border-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header hr {
-			border-bottom-color: rgba(255, 255, 255, 0.25);
+			border-bottom-color: rgba(49, 37, 37, 0.25);
 		}
 
 		#header h1 {
