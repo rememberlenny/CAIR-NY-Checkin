@@ -2,8 +2,12 @@
   .top-bar-left
     %ul.menu
       %li
-        = link_to root_path do
-          = image_tag 'logo.png', style: "width: 50%;"
+        - if user_signed_in?
+          = link_to user_root_path do
+            = image_tag 'logo.png', style: "width: 50%;"
+        - else
+          = link_to root_path do
+            = image_tag 'logo.png', style: "width: 50%;"
   .top-bar-right
     %ul.menu
       - if user_signed_in?
