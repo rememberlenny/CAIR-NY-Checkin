@@ -1,24 +1,31 @@
-.row
-  .large-12.column.text-center
-    %img{:src => "http://fakeimg.pl/150x150?text=user", :alt => ""}/
-    %h5
-      = link_to "http://instagram.com/" + "username" do
-        = "UserName"
+%div
+  .row
+    .large-12.column.text-center
+      %img{:src => "http://fakeimg.pl/120x120?text=user", :alt => ""}/
+      %h5
+        = link_to "http://instagram.com/" + "username" do
+          = "UserName"
 
-.row
-  .large-12.column.text-center
-    %ul.menu
-      %li
-        Pictures: 123
-      %li
-        = " - "
-      %li
-        Followers: 123
-      %li
-        = " - "
-      %li
-        Following: 123 
+%div.white-bg.detail-header
+  .row
+    .large-4.column
+      %div.text-center.medium-up-3
+        %div.column-block.column
+          123 
+          %br/
+          Pictures
+        %div.column-block.column
+          123 
+          %br/
+          Followers
+        %div.column-block.column
+          123  
+          %br/
+          Following
+    .large-4.column.text-center
+    .large-4.column.text-center
 
+%div.content-container
 
 %h1 User Home
 
