@@ -21,11 +21,17 @@
 // Plugins
 @import 'nprogress';
 
+.no-margin.no-margin{
+  margin: 0px;
+}
+
 .body{
   background: #fafafa;
 }
 
 .detail-header{
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-bottom: 1px solid #dbdbdb;
 }
 
@@ -38,7 +44,7 @@
 }
 
 .content-container{
-
+  background: #fafafa;
 }
 
 //
