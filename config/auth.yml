@@ -19,7 +19,7 @@ defaults: &defaults
   providers:
     instagram:
       name: Instagram
-      logout: 'https://www.instagram.com'
+      logout: 'https://www.instagram.com/logout/'
       key: <%= ENV['AUTH_INSTAGRAM_KEY'] %>
       secret: <%= ENV['AUTH_INSTAGRAM_SECRET'] %>
       # Settings listed in oauth are included in the omniauth provider configuration
@@ -28,7 +28,7 @@ defaults: &defaults
         # Common Facebook Scopes:
         # email,user_about_me,user_interests,user_activities,user_likes,user_location,user_website
         # friends_about_me,friends_interests,friends_activities,friends_likes,friends_location
-        scope: email
+        # scope: email
 
     # facebook:
     #   name: Facebook

@@ -1,4 +1,40 @@
-facebook: !ruby/hash:OmniAuth::AuthHash
+instagram: !ruby/hash:OmniAuth::AuthHash
+  provider: instagram
+  uid: '{uid}'
+  info: !ruby/hash:OmniAuth::AuthHash::InfoHash
+    nickname: {nickname}
+    email: {email}
+    name: {name}
+    first_name: {first_name}
+    last_name: {last_name}
+    image: {image_url}
+    description: {bio}
+    urls: !ruby/hash:Hashie::Mash
+      Facebook: http://www.instagram.com/rememberlenny
+      Website: {website}
+    location: {location}
+  credentials: !ruby/hash:Hashie::Mash
+    token: AAAsometokenAAAA
+    expires: false
+  extra: !ruby/hash:Hashie::Mash
+    raw_info: !ruby/hash:Hashie::Mash
+      id: '{uid}'
+      name: {name}
+      first_name: {first_name}
+      last_name: {last_name}
+      link: http://www.facebook.com/simple10
+      username: {username}
+      location: !ruby/hash:Hashie::Mash
+        id: '114952118516947'
+        name: {location}
+      bio: {bio}
+      gender: {gender}
+      email: {email}
+      timezone: -7
+      locale: en_US
+      verified: {verified}
+      updated_time: '2011-11-02T19:24:50+0000'facebook: !ruby/hash:OmniAuth::AuthHash
+
   provider: facebook
   uid: '{uid}'
   info: !ruby/hash:OmniAuth::AuthHash::InfoHash
