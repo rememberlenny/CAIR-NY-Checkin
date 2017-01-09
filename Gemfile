@@ -85,6 +85,7 @@ gem "cancancan"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-twitter"
+gem 'omniauth-instagram'
 # gem "omniauth-persona"
 # gem "omniauth-google-oauth2"
 # gem "omniauth-linkedin"
