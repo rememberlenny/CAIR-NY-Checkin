@@ -26,13 +26,15 @@
   /   .large-4.column.text-center
 
 %div#user-content-main.content-container
-  %h4.loading-status.text-center
-    %strong
-      Access features through texting the number below
-  %h4.loading-status.text-center
-    = ENV['APP_PHONE']
-    #loader.loading
-  .row
+  .loading-status
+    %h4.text-center
+      %strong
+        Access features through texting the number below
+      %h4.text-center
+        = link_to "sms://#{ENV['APP_PHONE']}?body=Hello!" do
+          = ENV['APP_PHONE']
+      #loader.loading
+    .row
 
 
     / - @months.to_a.reverse.each do |date|
