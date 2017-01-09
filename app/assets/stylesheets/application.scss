@@ -21,6 +21,14 @@
 // Plugins
 @import 'nprogress';
 
+.loading-status{
+  padding: 50px;
+}
+
+#loader.loading{
+  min-height: 300px;
+}
+
 .no-margin.no-margin{
   margin: 0px;
 }
