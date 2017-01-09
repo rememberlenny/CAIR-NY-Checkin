@@ -20,7 +20,7 @@ $(document).ready(function(){
   , left: '50%' // Left position relative to parent
   , shadow: true // Whether to render a shadow
   , hwaccel: true // Whether to use hardware acceleration
-  , position: 'absolute' // Element positioning
+  , position: 'relative' // Element positioning
   }
   var target = document.getElementById('loader')
   var spinner = new Spinner(opts).spin(target);
