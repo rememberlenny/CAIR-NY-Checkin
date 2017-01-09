@@ -1,7 +1,7 @@
 - id ||= 'destroy-modal'
 - i18n_prefix = i18n_prefix.present? ? "#{i18n_prefix}." : ''
 
-.reveal-modal.warning{id: id, data: {reveal: ''}, tabindex: -1, role: 'dialog', 'aria-labelledby' => "#{id}-title", 'aria-hidden' => true}
+.reveal{id: id, "aria-hidden" => "true", "data-resize" => id, "data-reveal" => id + "-reveal", "data-yeti-box" => id, :role => "dialog", :tabindex => "-1"}
   %h2{id: "#{id}-title"}= I18n.t "#{i18n_prefix}prompt"
   - warning = I18n.t "#{i18n_prefix}warning"
   - if warning.present?
@@ -13,3 +13,5 @@
     = I18n.t "#{i18n_prefix}submit"
   %button{data: {dismiss: ''}}= I18n.t "#{i18n_prefix}cancel"
   %a.close-reveal-modal ×
+  %button.close-button{"aria-label" => "Close reveal", "data-close" => "", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
