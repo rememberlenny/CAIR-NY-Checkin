@@ -27,6 +27,10 @@
 
 %div.content-container
   .row
+
+    - @months.to_a.reverse.each do |date|
+      %p
+        = date
     %h1 User Home
 
     %p
