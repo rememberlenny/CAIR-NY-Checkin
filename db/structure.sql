@@ -99,6 +99,38 @@ ALTER SEQUENCE authentications_id_seq OWNED BY authentications.id;
 
 
 --
+-- Name: messages; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE messages (
+    id integer NOT NULL,
+    account_id uuid,
+    message text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE messages_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE messages_id_seq OWNED BY messages.id;
+
+
+--
 -- Name: oauth_caches; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -217,6 +249,13 @@ ALTER TABLE ONLY authentications ALTER COLUMN id SET DEFAULT nextval('authentica
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY messages ALTER COLUMN id SET DEFAULT nextval('messages_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY rails_admin_histories ALTER COLUMN id SET DEFAULT nextval('rails_admin_histories_id_seq'::regclass);
 
 
@@ -241,6 +280,14 @@ ALTER TABLE ONLY accounts
 
 ALTER TABLE ONLY authentications
     ADD CONSTRAINT authentications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY messages
+    ADD CONSTRAINT messages_pkey PRIMARY KEY (id);
 
 
 --
@@ -329,4 +376,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140204233952');
 INSERT INTO schema_migrations (version) VALUES ('20170110033450');
 
 INSERT INTO schema_migrations (version) VALUES ('20170110033516');
+
+INSERT INTO schema_migrations (version) VALUES ('20170110053256');
 

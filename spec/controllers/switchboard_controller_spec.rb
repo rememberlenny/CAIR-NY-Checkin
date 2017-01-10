@@ -10,5 +10,4 @@ RSpec.describe SwitchboardController, type: :controller do
       expect(response.body).to eq({status: "success", message: message.to_s, phone: phone.to_s}.to_json)
     end
   end
-
 end

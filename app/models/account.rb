@@ -7,5 +7,6 @@ class Account < ActiveRecord::Base
     else
       account = accounts.first
     end
+    Message.new(account_id: account.id, message: message)
   end
 end
