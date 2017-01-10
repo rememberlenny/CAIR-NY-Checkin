@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ConversationResponse, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:conversation_response) {FactoryGirl.build(:conversation_response)}
+  
+  describe "#create_on_account" do
+    it "setup an account" do
+    end
+  end
 end
