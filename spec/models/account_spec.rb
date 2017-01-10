@@ -2,7 +2,12 @@ require 'rails_helper'
 
 describe Account, :type => :model do
   let(:account) {FactoryGirl.build(:account)}
-  skip "add some examples to (or delete) #{__FILE__}"
-  # todo: check loading of oath_data and default_scope
+  
+  describe "#create" do
+    it "setup an account" do
+      account.save
+      expect(account.phone).not_to eq(nil)
+    end
+  end
 end
 
