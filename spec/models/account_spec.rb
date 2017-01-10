@@ -12,7 +12,7 @@ describe Account, :type => :model do
 
   describe "#process_phone" do
     it "checks for existing account" do
-      phone = FFaker::PhoneNumber.phone_number
+      phone = FFaker::PhoneNumber.short_phone_number
       message = ""
       total = Account.all.count
       account.process_phone(phone, message)
@@ -21,7 +21,7 @@ describe Account, :type => :model do
     end
 
     it "checks for existing account using delay" do
-      phone = FFaker::PhoneNumber.phone_number
+      phone = FFaker::PhoneNumber.short_phone_number
       message = ""
       total = Sidekiq::Extensions::DelayedClass.jobs.size
       Account.delay.process_phone(phone, message)
@@ -30,7 +30,7 @@ describe Account, :type => :model do
     end
 
     it "creates a new one if it exists" do
-      phone = FFaker::PhoneNumber.phone_number
+      phone = FFaker::PhoneNumber.short_phone_number
       message = ""
       
       a = Account.new(phone: phone)
@@ -44,7 +44,7 @@ describe Account, :type => :model do
     end
 
     it "creates a new one using delay if it exists" do
-      phone = FFaker::PhoneNumber.phone_number
+      phone = FFaker::PhoneNumber.short_phone_number
       message = ""
       
       a = Account.new(phone: phone)
@@ -56,7 +56,7 @@ describe Account, :type => :model do
     end
 
     it "creates a new message" do
-      phone = FFaker::PhoneNumber.phone_number
+      phone = FFaker::PhoneNumber.short_phone_number
       message = "123"
       
       a = Account.new(phone: phone)

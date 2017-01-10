@@ -11,10 +11,15 @@ RSpec.describe Message, type: :model do
     end
     
     it "checks for existing account" do
-      phone = FFaker::PhoneNumber.phone_number
+      phone = FFaker::PhoneNumber.short_phone_number
+      account = Account.new(phone: phone)
+      account.save
+
+      account_id = account.id
       message = "123"
       total = Message.all.count
-      Message.create_on_account(phone, message)
+      
+      Message.create_on_account(account_id, message)
       new_total = Message.all.count
       expect(new_total).to eq(total + 1)
     end

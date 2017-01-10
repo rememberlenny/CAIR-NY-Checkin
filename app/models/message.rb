@@ -7,11 +7,12 @@ class Message < ActiveRecord::Base
   end
 
   def self.send_message(account_id, content)
+    setup_twilio
+    
     message = Message.new(account_id: account_id, message: content, direction: "out")
     message.save
     account = Account.find(account_id)
     
-    setup_twilio
     @client.messages.create(from: ENV['APP_SYSTEM_PHONE'], to: account.phone, body: content)
   end
 
