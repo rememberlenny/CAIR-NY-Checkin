@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/terms' => 'pages#terms', as: 'terms'
   get '/privacy' => 'pages#privacy', as: 'privacy'
   
-  get '/b/sms' => 'switchboard#sms', via: [:post]
+  post '/b/sms' => 'switchboard#sms', as: 'switchboard'
 
   # OAuth
   oauth_prefix = Rails.application.config.auth.omniauth.path_prefix
