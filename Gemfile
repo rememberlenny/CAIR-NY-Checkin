@@ -127,8 +127,8 @@ end
 
 group :development, :test do
   # # Use spring or zeus
-  # gem "spring"                  # keep application running in the background
-  # gem "spring-commands-rspec"
+  gem "spring"                  # keep application running in the background
+  gem "spring-commands-rspec"
   # # gem "zeus"                  # required in gemfile for guard
   
 
@@ -136,7 +136,7 @@ group :development, :test do
   gem "pry"                   # better than irb
   # # gem "byebug"                # ruby 2.0 debugger with built-in pry
   gem "pry-rails"               # adds rails specific commands to pry
-  # gem "pry-byebug"              # add debugging commands to pry
+  gem "pry-byebug"              # add debugging commands to pry
   gem "pry-stack_explorer"      # navigate call stack
   gem "pry-rescue"            # start pry session on uncaught exception
   gem "pry-doc"               # browse docs from console
@@ -144,20 +144,20 @@ group :development, :test do
   gem "pry-remote"            # connect remotely to pry console
   # # gem "coolline"              # sytax highlighting as you type
   # # gem "coderay"               # use with coolline
-  # gem "awesome_print"           # pretty pring debugging output
+  gem "awesome_print"           # pretty pring debugging output
 
   # # Testing
-  # gem "rspec-rails"
-  # gem "factory_girl_rails"
-  # gem "ffaker"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "ffaker"
   # gem "capybara-webkit"
-  # # gem "poltergeist"           # alternative to capybara-webkit
-  # # gem "capybara-firebug"
-  # # gem "launchy"               # save_and_open_page support for rspec
-  # # gem "zeus-parallel_tests"   # speed up lengthy tests
+  gem "poltergeist"           # alternative to capybara-webkit
+  # gem "capybara-firebug"
+  # gem "launchy"               # save_and_open_page support for rspec
+  # gem "zeus-parallel_tests"   # speed up lengthy tests
 
   # # Logging
-  # gem "quiet_assets"
+  gem "quiet_assets"
 end
 
 group :test do
