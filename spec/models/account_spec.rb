@@ -15,7 +15,7 @@ describe Account, :type => :model do
       phone = FFaker::PhoneNumber.short_phone_number
       message = ""
       total = Account.all.count
-      account.process_phone(phone, message)
+      Account.process_phone(phone, message)
       new_total = Account.all.count
       expect(new_total).to eq(total + 1)
     end
@@ -37,7 +37,7 @@ describe Account, :type => :model do
       a.save
       total = Account.all.count
 
-      account.process_phone(phone, message)
+      Account.process_phone(phone, message)
       new_total = Account.all.count
       expect(new_total).not_to eq(total + 1)
       expect(new_total).to eq(total)
@@ -63,7 +63,7 @@ describe Account, :type => :model do
       a.save
       total = Message.all.count
 
-      account.process_phone(phone, message)
+      Account.process_phone(phone, message)
       new_total = Message.all.count
       expect(new_total).to eq(total + 1)
     end

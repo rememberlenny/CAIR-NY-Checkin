@@ -8,19 +8,23 @@ class Message < ActiveRecord::Base
 
   def self.send_message(account_id, content)
     setup_twilio
-    
+
     message = Message.new(account_id: account_id, message: content, direction: "out")
     message.save
     account = Account.find(account_id)
     
-    @client.messages.create(from: ENV['APP_SYSTEM_PHONE'], to: account.phone, body: content)
+    if !Rails.env.test?
+      @client.messages.create(from: ENV['APP_SYSTEM_PHONE'], to: account.phone, body: content)
+    end
   end
 
   def self.determine_response(account_id, message_id)
     account_messages = Message.where(account_id: account_id, direction: "in")
     content = "(" + account_messages.count.to_s + ")"
     
-    send_message(account_id, content)
+    if !Rails.env.test?
+      send_message(account_id, content)
+    end
   end
 
   def self.setup_twilio
