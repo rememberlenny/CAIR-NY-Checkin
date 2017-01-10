@@ -8,14 +8,12 @@ RSpec.describe ConversationState do
       keyword = "hello"
       cc = ConversationResponse.new(trigger: keyword, statement: "Howdy")
       cc.save
-      cc = ConversationResponse.new(trigger: keyword, statement: "Whats up!")
-      cc.save
       message = Message.new(account_id: aa.id, message: keyword, direction: "out")
       message.save
 
       state = ConversationState.get_response(message.message)
 
-      expect(true).to eq(state)
+      expect(state).to eq("Howdy")
     end
   end
 end
