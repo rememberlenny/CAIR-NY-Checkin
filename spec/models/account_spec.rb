@@ -20,6 +20,15 @@ describe Account, :type => :model do
       expect(new_total).to eq(total + 1)
     end
 
+    it "checks for existing account using delay" do
+      phone = FFaker::PhoneNumber.phone_number
+      message = ""
+      total = Sidekiq::Extensions::DelayedClass.jobs.size
+      Account.delay.process_phone(phone, message)
+      new_total = Sidekiq::Extensions::DelayedClass.jobs.size
+      expect(new_total).to eq(total + 1)
+    end
+
     it "creates a new one if it exists" do
       phone = FFaker::PhoneNumber.phone_number
       message = ""
@@ -32,6 +41,18 @@ describe Account, :type => :model do
       new_total = Account.all.count
       expect(new_total).not_to eq(total + 1)
       expect(new_total).to eq(total)
+    end
+
+    it "creates a new one using delay if it exists" do
+      phone = FFaker::PhoneNumber.phone_number
+      message = ""
+      
+      a = Account.new(phone: phone)
+      a.save
+      total = Sidekiq::Extensions::DelayedClass.jobs.size
+      Account.delay.process_phone(phone, message)
+      new_total = Sidekiq::Extensions::DelayedClass.jobs.size
+      expect(new_total).to eq(total + 1)
     end
 
     it "creates a new message" do
