@@ -107,7 +107,8 @@ CREATE TABLE messages (
     account_id uuid,
     message text,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    direction character varying
 );
 
 
@@ -354,4 +355,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170110033516');
 INSERT INTO schema_migrations (version) VALUES ('20170110053256');
 
 INSERT INTO schema_migrations (version) VALUES ('20170110153931');
+
+INSERT INTO schema_migrations (version) VALUES ('20170110155343');
 
