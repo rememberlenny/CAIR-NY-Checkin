@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SwitchboardController, type: :controller do
 
   describe "#sms" do
-    it "gets post value" do
+    it "gets phone number and body content" do
       phone = "+19493228496"
       message = "Test content"
       post :sms, { From: phone, Body: message }
