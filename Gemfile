@@ -78,6 +78,7 @@ gem "font-awesome-rails"
 
 # Email
 gem "premailer-rails"
+gem "twilio-ruby"
 
 # Authentication
 gem "devise"
