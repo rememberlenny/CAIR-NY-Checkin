@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  def process_phone(phone, message)
+  def self.process_phone(phone, message)
     accounts = Account.where(phone: phone)
     if accounts.count == 0
       account = Account.new(phone: phone)
