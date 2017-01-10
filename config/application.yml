@@ -71,10 +71,10 @@ default_env: &default_env
 
 development:
   <<: *common
+  CANONICAL_HOST: 'prehave.ngrok.io'
   env:
     <<: *default_env
     ALLOW_EMAIL_PREVIEW: true
-
 test:
   <<: *common
   env:
@@ -87,6 +87,7 @@ staging:
 
 production:
   <<: *common
+  CANONICAL_HOST: 'prehave.com'
   env:
     # Set dummy key so rake assets:precompile succeeds
     DEVISE_SECRET_KEY: ''
