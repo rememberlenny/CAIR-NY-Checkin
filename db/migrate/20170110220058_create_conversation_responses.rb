@@ -1,6 +1,6 @@
-class CreateConversationStates < ActiveRecord::Migration
+class CreateConversationResponses < ActiveRecord::Migration
   def change
-    create_table :conversation_states do |t|
+    create_table :conversation_responses do |t|
       t.text :statement
       t.string :trigger
 

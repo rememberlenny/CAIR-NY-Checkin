@@ -46,6 +46,11 @@ module AlwaysBeFollowing
     # Enable faster precompiles
     config.assets.initialize_on_precompile = false
 
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
+    config.autoload_paths << Rails.root.join('app', 'mailers', 'concerns')
+    config.autoload_paths << Rails.root.join('app', 'policies', 'concerns')
+    config.autoload_paths << Rails.root.join('lib')
+
     # Serve vendor fonts
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
 
