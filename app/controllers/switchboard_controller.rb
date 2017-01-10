@@ -6,9 +6,8 @@ class SwitchboardController < ApplicationController
 
   def sms
     phone = params[:From]
-
-    Account.delay.process_phone(phone)
-    
+    message = params[:Body]
+    Account.delay.process_phone(phone, message)
     render json: {status: "success"}
   end
 
