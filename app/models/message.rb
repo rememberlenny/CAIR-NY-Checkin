@@ -1,4 +1,6 @@
 class Message < ActiveRecord::Base
+  validates :account_id, :message, :direction, presence: true
+
   def self.create_on_account(account_id, message)
     message = Message.new(account_id: account_id, message: message, direction: "in")
     message.save
