@@ -19,7 +19,7 @@ class Message < ActiveRecord::Base
   end
 
   def self.determine_response(account_id, message_id)
-    content = ConversationState(message_id)
+    content = ConversationState.get_response(message_id)
     
     if Rails.env.development?
       account_messages = Message.where(account_id: account_id, direction: "in")
