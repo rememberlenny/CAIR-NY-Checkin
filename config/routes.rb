@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get "#{oauth_prefix}/:provider" => 'users/oauth#passthru', as: 'provider_auth'
   get oauth_prefix => redirect("#{oauth_prefix}/login")
 
+  get '/:id' => "shortener/shortened_urls#show"
+
   # Devise
   devise_prefix = Rails.application.config.auth.devise.path_prefix
   devise_for :users, path: devise_prefix,

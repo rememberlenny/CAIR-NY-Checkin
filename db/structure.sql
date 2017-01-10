@@ -170,6 +170,44 @@ CREATE TABLE schema_migrations (
 
 
 --
+-- Name: shortened_urls; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE shortened_urls (
+    id integer NOT NULL,
+    owner_id integer,
+    owner_type character varying(20),
+    url text NOT NULL,
+    unique_key character varying(10) NOT NULL,
+    label character varying,
+    string character varying,
+    use_count integer DEFAULT 0 NOT NULL,
+    expires_at timestamp without time zone,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: shortened_urls_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE shortened_urls_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: shortened_urls_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE shortened_urls_id_seq OWNED BY shortened_urls.id;
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -238,6 +276,13 @@ ALTER TABLE ONLY rails_admin_histories ALTER COLUMN id SET DEFAULT nextval('rail
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY shortened_urls ALTER COLUMN id SET DEFAULT nextval('shortened_urls_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
@@ -274,6 +319,14 @@ ALTER TABLE ONLY rails_admin_histories
 
 
 --
+-- Name: shortened_urls_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY shortened_urls
+    ADD CONSTRAINT shortened_urls_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -293,6 +346,34 @@ CREATE INDEX index_authentications_on_provider ON authentications USING btree (p
 --
 
 CREATE INDEX index_rails_admin_histories ON rails_admin_histories USING btree (item, "table", month, year);
+
+
+--
+-- Name: index_shortened_urls_on_label; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_shortened_urls_on_label ON shortened_urls USING btree (label);
+
+
+--
+-- Name: index_shortened_urls_on_owner_id_and_owner_type; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_shortened_urls_on_owner_id_and_owner_type ON shortened_urls USING btree (owner_id, owner_type);
+
+
+--
+-- Name: index_shortened_urls_on_unique_key; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_shortened_urls_on_unique_key ON shortened_urls USING btree (unique_key);
+
+
+--
+-- Name: index_shortened_urls_on_url; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_shortened_urls_on_url ON shortened_urls USING btree (url);
 
 
 --
@@ -357,4 +438,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170110053256');
 INSERT INTO schema_migrations (version) VALUES ('20170110153931');
 
 INSERT INTO schema_migrations (version) VALUES ('20170110155343');
+
+INSERT INTO schema_migrations (version) VALUES ('20170110190610');
 

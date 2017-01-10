@@ -20,6 +20,8 @@ gem "acts-as-taggable-on"
 gem "dotenv-rails", require: "dotenv/rails-now"
 gem "instagram"
 
+gem 'shortener'
+
 gem "country_select"
 gem "fastimage"
 gem "image_processing"
