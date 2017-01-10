@@ -20,8 +20,13 @@ class Message < ActiveRecord::Base
 
   def self.determine_response(account_id, message_id)
     account_messages = Message.where(account_id: account_id, direction: "in")
-    content = "(" + account_messages.count.to_s + ")"
     
+    content = ConversationState
+    
+    if Rails.env.development?
+      content = content + " (" + account_messages.count.to_s + ")"
+    end
+
     if !Rails.env.test?
       send_message(account_id, content)
     end

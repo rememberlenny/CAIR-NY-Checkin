@@ -99,6 +99,38 @@ ALTER SEQUENCE authentications_id_seq OWNED BY authentications.id;
 
 
 --
+-- Name: conversation_states; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE conversation_states (
+    id integer NOT NULL,
+    statement text,
+    trigger character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: conversation_states_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE conversation_states_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: conversation_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE conversation_states_id_seq OWNED BY conversation_states.id;
+
+
+--
 -- Name: messages; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -269,6 +301,13 @@ ALTER TABLE ONLY authentications ALTER COLUMN id SET DEFAULT nextval('authentica
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY conversation_states ALTER COLUMN id SET DEFAULT nextval('conversation_states_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY rails_admin_histories ALTER COLUMN id SET DEFAULT nextval('rails_admin_histories_id_seq'::regclass);
 
 
@@ -300,6 +339,14 @@ ALTER TABLE ONLY accounts
 
 ALTER TABLE ONLY authentications
     ADD CONSTRAINT authentications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: conversation_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY conversation_states
+    ADD CONSTRAINT conversation_states_pkey PRIMARY KEY (id);
 
 
 --
@@ -440,4 +487,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170110153931');
 INSERT INTO schema_migrations (version) VALUES ('20170110155343');
 
 INSERT INTO schema_migrations (version) VALUES ('20170110190610');
+
+INSERT INTO schema_migrations (version) VALUES ('20170110210255');
 
