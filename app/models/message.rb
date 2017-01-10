@@ -4,10 +4,10 @@ class Message < ActiveRecord::Base
     message = Message.new(account_id: account_id, message: message)
     message.save
 
-    process_response(message.id)
+    determine_response(message.id)
   end
 
-  def process_response(message_id)
+  def self.determine_response(message_id)
     message = Message.find(message_id)
   end
 end

@@ -103,31 +103,12 @@ ALTER SEQUENCE authentications_id_seq OWNED BY authentications.id;
 --
 
 CREATE TABLE messages (
-    id integer NOT NULL,
+    id uuid DEFAULT uuid_generate_v4() NOT NULL,
     account_id uuid,
     message text,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
-
-
---
--- Name: messages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE messages_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE messages_id_seq OWNED BY messages.id;
 
 
 --
@@ -243,13 +224,6 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 --
 
 ALTER TABLE ONLY authentications ALTER COLUMN id SET DEFAULT nextval('authentications_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY messages ALTER COLUMN id SET DEFAULT nextval('messages_id_seq'::regclass);
 
 
 --
@@ -378,4 +352,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170110033450');
 INSERT INTO schema_migrations (version) VALUES ('20170110033516');
 
 INSERT INTO schema_migrations (version) VALUES ('20170110053256');
+
+INSERT INTO schema_migrations (version) VALUES ('20170110153931');
 
