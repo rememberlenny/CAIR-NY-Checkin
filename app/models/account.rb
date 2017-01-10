@@ -7,6 +7,7 @@ class Account < ActiveRecord::Base
     else
       account = accounts.first
     end
-    Message.new(account_id: account.id, message: message)
+
+    Message.create_on_account(account.id, message)
   end
 end

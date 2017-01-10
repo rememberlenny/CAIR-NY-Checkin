@@ -17,7 +17,7 @@ describe Account, :type => :model do
       total = Account.all.count
       Account.process_phone(phone, message)
       new_total = Account.all.count
-      expect(new_total).to eq(total+1)
+      expect(new_total).to eq(total + 1)
     end
 
     it "creates a new one if it exists" do
@@ -30,8 +30,21 @@ describe Account, :type => :model do
 
       Account.process_phone(phone, message)
       new_total = Account.all.count
-      expect(new_total).not_to eq(total+1)
+      expect(new_total).not_to eq(total + 1)
       expect(new_total).to eq(total)
+    end
+
+    it "creates a new message" do
+      phone = FFaker::PhoneNumber.phone_number
+      message = "123"
+      
+      a = Account.new(phone: phone)
+      a.save
+      total = Message.all.count
+
+      Account.process_phone(phone, message)
+      new_total = Message.all.count
+      expect(new_total).to eq(total + 1)
     end
   end
 end
