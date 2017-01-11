@@ -10,6 +10,8 @@ class Message < ActiveRecord::Base
     if !Rails.env.test? && should_send
       send_message(account_id, content)
     end
+
+    content
   end
 
   def self.send_message(account_id, content)

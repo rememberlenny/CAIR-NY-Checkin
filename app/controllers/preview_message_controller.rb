@@ -1,7 +1,7 @@
 class PreviewMessageController < ApplicationController
   skip_authorization_check
   skip_before_action :authenticate_user!
-  respond_to :html, :json
+  respond_to :html, :json, :js
 
   def show
     @number = params[:number]
@@ -10,12 +10,11 @@ class PreviewMessageController < ApplicationController
   end
 
   def submit
-    respond_to do |format|
-      message = params[:message]
-      @number = params[:number]
-      account = Account.where(phone: @number).first
-      response = Message.create_on_account(account.id, message, false)
-      format.json { render json: response }
-    end
+    message = params[:message]
+    @number = params[:number]
+    account = Account.where(phone: @number).first
+    text_response = Message.create_on_account(account.id, message, false)
+
+    render json: {status: "success", message: text_response}
   end
 end
