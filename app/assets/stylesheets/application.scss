@@ -21,6 +21,23 @@
 // Plugins
 @import 'nprogress';
 
+#phone-input,
+#phone-input-submit{
+  height: 5vh;
+  line-height: 5vh;
+  display: inline-block
+}
+
+#phone-input-submit{
+  width: 20%;
+  float: right;
+}
+
+#phone-input{
+  width: 70%;
+  float: left;
+}
+
 .scrollable{
   position: relative;
   height: 50vh;
