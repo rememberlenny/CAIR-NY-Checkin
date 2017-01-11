@@ -2,24 +2,26 @@ class Message < ActiveRecord::Base
   validates :account_id, :message, :direction, presence: true
 
   def self.create_on_account(account_id, message, should_send = true)
+    if Rails.env.test?
+      should_send = false
+    end
+
     message = Message.new(account_id: account_id, message: message, direction: "in")
     message.save
 
     content = determine_response(account_id, message.id)
 
-    if !Rails.env.test? && should_send
-      send_message(account_id, content)
-    end
+    create_message(account_id, content, should_send)
 
     content
   end
 
-  def self.send_message(account_id, content)
+  def self.create_message(account_id, content, should_send)
     message = Message.new(account_id: account_id, message: content, direction: "out")
     message.save
     account = Account.find(account_id)
     
-    if !Rails.env.test?
+    if should_send
       setup_twilio
       @client.messages.create(from: ENV['APP_SYSTEM_PHONE'], to: account.phone, body: content)
     end

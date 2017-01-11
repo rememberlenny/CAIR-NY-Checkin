@@ -6,10 +6,15 @@ $(document).ready(function(){
   });
 
   function submitToNumber(message){
-    var submitPath = $('#submit-path').attr('data-path');
+    var submitPath = $('#submit-path').data('path');
     $.ajax({
-
+      method: "POST",
+      url: submitPath,
+      data: { message: message }
     })
+      .done(function( msg ) {
+        console.log( msg );
+      });
   }
 
   $('#phone-simulator').on('submit', function(e){
