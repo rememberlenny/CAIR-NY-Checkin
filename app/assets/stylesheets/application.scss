@@ -24,7 +24,6 @@
 #phone-input,
 #phone-input-submit{
   height: 5vh;
-  line-height: 5vh;
   display: inline-block
 }
 
@@ -34,6 +33,7 @@
 }
 
 #phone-input{
+  line-height: 5vh;
   width: 70%;
   float: left;
 }
