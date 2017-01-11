@@ -4,8 +4,8 @@ class ConversationState
     if is_reserve_word?(message_trigger)
       host_url = Rails.application.config.settings.CANONICAL_HOST
       instagram_login_url = Rails.application.routes.url_helpers.provider_auth_path("instagram", host: host_url)
-      short_login_url = Shortener::ShortenedUrl.generate(instagram_login_url, nil, expires_at: 10.minutes.since)
-      content = "Login using this link: " + short_login_url
+      short_login_url = Shortener::ShortenedUrl.generate(instagram_login_url)
+      content = "Login using this link: " + "http://" + host_url + instagram_login_url + "?flow=signup"
       return content
     end
 
