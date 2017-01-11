@@ -2,7 +2,10 @@ class ConversationState
   include Rails.application.routes.url_helpers
   def self.get_response(message_trigger)
     if is_reserve_word?(message_trigger)
-      content = "Login using this link: " + Shortener::ShortenedUrl.generate(Rails.application.routes.url_helpers.provider_auth_path("instagram"), host: CANONICAL_HOST).to_s
+      host_url = Rails.application.config.settings.CANONICAL_HOST
+      instagram_login_url = Rails.application.routes.url_helpers.provider_auth_path("instagram", host: host_url)
+      short_login_url = Shortener::ShortenedUrl.generate(instagram_login_url, nil, expires_at: 10.minutes.since)
+      content = "Login using this link: " + short_login_url
       return content
     end
 
