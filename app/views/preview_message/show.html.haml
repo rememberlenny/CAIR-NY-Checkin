@@ -1,2 +1,15 @@
-%h1 PreviewMessage#show
-%p Find me in app/views/preview_message/show.html.haml
+%h1
+  Message view for #{@number}
+
+#phone-messages.scrollable{:name => "", :cols => "30", :rows => "10"}
+  - @messages.each do |message|
+    %p
+      - if message.direction == "in"
+        = "<b>Prehave:</b> ".html_safe
+      - else  
+        = "<b>You:</b> ".html_safe
+      = message.message
+      %small
+        = message.created_at
+
+%input#phone-input{:type => "etext"}/

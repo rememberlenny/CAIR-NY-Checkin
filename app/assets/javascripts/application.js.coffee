@@ -19,6 +19,7 @@
 #= require nprogress-turbolinks
 #= require rails_confirm_dialog
 #= require jquery.scrollto
+#= require scroll-message
 #= require spin
 #= require spin-app
 

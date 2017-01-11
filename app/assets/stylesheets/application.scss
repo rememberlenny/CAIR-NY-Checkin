@@ -21,6 +21,16 @@
 // Plugins
 @import 'nprogress';
 
+.scrollable{
+  position: relative;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.scrollable p{
+  margin-bottom: 3px;
+}
+
 .loading-status{
   padding: 50px;
 }
