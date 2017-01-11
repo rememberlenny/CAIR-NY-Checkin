@@ -6,7 +6,7 @@
 #phone-messages.scrollable{:name => "", :cols => "30", :rows => "10"}
   - @messages.each do |message|
     %p
-      - if message.direction == "in"
+      - if message.direction == "out"
         = "<b>Prehave:</b> ".html_safe
       - else  
         = "<b>You:</b> ".html_safe
