@@ -1,9 +1,9 @@
 $(document).ready(function(){
-  $(function() {
+  function scrollToBottom(){
     var wtf    = $('.scrollable');
     var height = wtf[0].scrollHeight;
     wtf.scrollTop(height);
-  });
+  }
 
   function submitToNumber(message){
     var submitPath = $('#submit-path').data('path');
@@ -13,7 +13,7 @@ $(document).ready(function(){
       data: { message: message }
     })
       .done(function( msg ) {
-        renderResponse(msg, "out");
+        renderResponse(msg.message, "out");
         console.log( "Replying with: ", msg );
       });
   }
@@ -24,6 +24,7 @@ $(document).ready(function(){
     } else {
       $('#phone-messages').append('<p><b>You:</b> '+ message +'</p>')
     }
+    scrollToBottom();
   }
 
   $('#phone-simulator').on('submit', function(e){
@@ -35,4 +36,6 @@ $(document).ready(function(){
     submitToNumber(field_value);
     field.val('');
   });
+
+  scrollToBottom();
 })
