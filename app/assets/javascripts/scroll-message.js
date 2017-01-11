@@ -5,11 +5,18 @@ $(document).ready(function(){
     wtf.scrollTop(height);
   });
 
+  function submitToNumber(message){
+    var submitPath = $('#submit-path').attr('data-path');
+    $.ajax({
+
+    })
+  }
+
   $('#phone-simulator').on('submit', function(e){
     e.preventDefault();
     var field = $('#phone-input');
     var field_value = field.val();
-    alert(field_value);
+    submitToNumber(field_value);
     field.val('');
   });
 })

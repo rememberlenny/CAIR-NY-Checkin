@@ -1,6 +1,8 @@
 %h1
   Message view for #{@number}
 
+%meta#submit-path{data: {path: root_path}}/
+
 #phone-messages.scrollable{:name => "", :cols => "30", :rows => "10"}
   - @messages.each do |message|
     %p
