@@ -7,6 +7,10 @@
 //= require rails_admin
 //= require foundation_and_overrides
 
+.controller__pages.action__home .top-bar{
+  margin: 0px;
+  display: none;
+}
 
 // Core
 @import "variables";
