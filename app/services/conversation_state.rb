@@ -15,7 +15,7 @@ class ConversationState
       reserve_response = self.focus_process
     end
 
-    if reserve_response.nil?
+    if !reserve_response.nil?
       return reserve_response
     end
 
