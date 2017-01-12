@@ -1,4 +1,8 @@
 class Account < ActiveRecord::Base
+  def self.logged_in?
+    true
+  end
+
   def self.process_phone(phone, message)
     accounts = Account.where(phone: phone)
     if accounts.count == 0

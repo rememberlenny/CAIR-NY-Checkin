@@ -72,6 +72,7 @@ class Users::OauthController < ApplicationController
     # Auth credentials are new and the user is not logged in
     else
       session[:omniauth] = @omniauth
+      session[:phone] = @phone
       # Do not log user in yet, redirect to after_auth so user
       # can fill in any additional registration requirements like email
       redirect_to default_redirect_path
@@ -120,6 +121,7 @@ class Users::OauthController < ApplicationController
 
     flow      = request.env['omniauth.params'].try(:[], 'flow') || params['flow']
     @flow     = flow.present? && flow.to_sym || nil
+    @phone    = params['phone']
     @provider = @omniauth && @omniauth[:provider] || session && session[:oauth] && session[:oauth].first.first
     @provider = @provider.downcase if @provider.is_a?(String)
   end
