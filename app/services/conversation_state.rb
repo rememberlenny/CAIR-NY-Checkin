@@ -1,18 +1,21 @@
 class ConversationState
   include Rails.application.routes.url_helpers
   def self.get_response(message_trigger)
-    if is_reserve_word?(message_trigger)
-      if message_trigger == "login"
-        reserve_response = self.login_process
-      elsif message_trigger == "summary"
-        reserve_response = self.summary_process
-      elsif message_trigger == "followers"
-        reserve_response = self.followers_process
-      elsif message_trigger == "comments"
-        reserve_response = self.comments_process
-      elsif message_trigger == "focus"
-        reserve_response = self.focus_process
-      end
+    reserve_response = nil
+
+    if message_trigger == "login"
+      reserve_response = self.login_process
+    elsif message_trigger == "summary"
+      reserve_response = self.summary_process
+    elsif message_trigger == "followers"
+      reserve_response = self.followers_process
+    elsif message_trigger == "comments"
+      reserve_response = self.comments_process
+    elsif message_trigger == "focus"
+      reserve_response = self.focus_process
+    end
+
+    if reserve_response.nil?
       return reserve_response
     end
 
@@ -42,16 +45,11 @@ class ConversationState
     "working focus_process"
   end
 
-
   def self.login_process
     host_url = Rails.application.config.settings.CANONICAL_HOST
     instagram_login_url = Rails.application.routes.url_helpers.provider_auth_path("instagram", host: host_url)
     short_login_url = Shortener::ShortenedUrl.generate(instagram_login_url)
     content = "Login using this link: " + "http://" + host_url + instagram_login_url + "?flow=signup"
     return content
-  end
-
-  def self.is_reserve_word?(word)
-    ["login"].include? word.downcase
   end
 end
