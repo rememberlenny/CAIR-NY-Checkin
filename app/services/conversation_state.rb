@@ -4,6 +4,14 @@ class ConversationState
     if is_reserve_word?(message_trigger)
       if message_trigger == "login"
         reserve_response = self.login_process
+      elsif message_trigger == "summary"
+        reserve_response = self.summary_process
+      elsif message_trigger == "followers"
+        reserve_response = self.followers_process
+      elsif message_trigger == "comments"
+        reserve_response = self.comments_process
+      elsif message_trigger == "focus"
+        reserve_response = self.focus_process
       end
       return reserve_response
     end
@@ -17,6 +25,23 @@ class ConversationState
       conversation_response.statement
     end
   end
+
+  def self.summary_process
+    "working summary_process"
+  end
+
+  def self.followers_process
+    "working followers_process"
+  end
+
+  def self.comments_process
+    "working comments_process"
+  end
+
+  def self.focus_process
+    "working focus_process"
+  end
+
 
   def self.login_process
     host_url = Rails.application.config.settings.CANONICAL_HOST
