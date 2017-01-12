@@ -3,8 +3,9 @@ class ConversationState
   def self.get_response(message_trigger)
     if is_reserve_word?(message_trigger)
       if message_trigger == "login"
-        self.login_process
+        reserve_response = self.login_process
       end
+      return reserve_response
     end
 
     conversation_responses = ConversationResponse.where("lower(trigger) = ?", message_trigger.downcase)
