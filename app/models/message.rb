@@ -33,7 +33,7 @@ class Message < ActiveRecord::Base
     
     if Rails.env.development?
       account_messages = Message.where(account_id: account_id, direction: "in")
-      content = content + " (" + account_messages.count.to_s + ")"
+      # content = content + " (" + account_messages.count.to_s + ")"
     end
     
     content
