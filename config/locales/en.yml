@@ -26,11 +26,11 @@
 
 en:
   brand:
-    name: 'alwaysbefollowing'
+    name: 'Prehave'
 
   emails:
     welcome:
-      subject: 'Welcome to alwaysbefollowing'
+      subject: 'Welcome to Prehave'
 
   auth:
     login:

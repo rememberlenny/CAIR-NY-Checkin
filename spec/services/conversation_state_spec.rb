@@ -5,6 +5,17 @@ RSpec.describe ConversationState do
     it "if reserve is login" do
       aa = Account.new(phone: "123")
       aa.save
+      message = Message.new(account_id: aa.id, message: "login", direction: "out")
+      message.save
+
+      state = ConversationState.get_response(message.message)
+
+      expect(state).to eq("Howdy")
+    end
+
+    it "if reserve is login" do
+      aa = Account.new(phone: "123")
+      aa.save
       keyword = "login"
       cc = ConversationResponse.new(trigger: keyword, statement: "Howdy")
       cc.save
