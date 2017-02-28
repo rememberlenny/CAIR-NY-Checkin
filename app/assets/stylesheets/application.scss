@@ -12,6 +12,10 @@
     margin-bottom: 30px;
 }
 
+.phone-image{
+  max-width: 170px;
+}
+
 .content-foot{
   padding-top: 30px;
   padding-bottom: 30px;
@@ -122,8 +126,8 @@ footer li{
   background: #fafafa;
 }
 
-.text-bot.callout .input-group-field,
-.text-bot.callout .input-group-button input{
+.text-bot .input-group-field,
+.text-bot .input-group-button input{
   height: 3.08333rem;
 }
 .text-bot.callout{
