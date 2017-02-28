@@ -1,38 +1,6 @@
 
 %footer.page__footer.text-center
   #preFooter.content-foot
-    .pre-footer-inner
-      #preFooterBlocks.sqs-layout.sqs-grid-12.columns-12{"data-layout-label" => "Pre-Footer Content", "data-type" => "block-field", "data-updated-on" => "1406661050940"}
-        .row.sqs-row
-          .col.sqs-col-12.span-12
-            #block-yui_3_17_2_1_1406660821033_8373.sqs-block.socialaccountlinks-v2-block.sqs-block-socialaccountlinks-v2{"data-block-type" => "54"}
-              .sqs-block-content
-                .sqs-svg-icon--outer.social-icon-alignment-center.social-icons-color-white.social-icons-size-large.social-icons-shape-circle.social-icons-style-knockout
-                  %nav.sqs-svg-icon--list
-                    %a.sqs-svg-icon--wrapper.instagram{:href => "http://instagram.com/cairnewyork", :target => "_blank"}
-                      %div
-                        %svg.sqs-svg-icon--social{:viewbox => "0 0 64 64"}
-                          %use.sqs-use--icon{"xlink:href" => "#instagram-icon", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
-                          %use.sqs-use--mask{"xlink:href" => "#instagram-mask", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
-                    %a.sqs-svg-icon--wrapper.twitter{:href => "https://twitter.com/CAIRNewYork", :target => "_blank"}
-                      %div
-                        %svg.sqs-svg-icon--social{:viewbox => "0 0 64 64"}
-                          %use.sqs-use--icon{"xlink:href" => "#twitter-icon", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
-                          %use.sqs-use--mask{"xlink:href" => "#twitter-mask", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
-                    %a.sqs-svg-icon--wrapper.facebook{:href => "https://www.facebook.com/CAIRNewYork", :target => "_blank"}
-                      %div
-                        %svg.sqs-svg-icon--social{:viewbox => "0 0 64 64"}
-                          %use.sqs-use--icon{"xlink:href" => "#facebook-icon", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
-                          %use.sqs-use--mask{"xlink:href" => "#facebook-mask", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
-
-  .row.content-foot
-    .medium-8.column.centered
-      %p
-        COUNCIL ON AMERICAN-ISLAMIC RELATIONS, 46-01 20TH AVENUE, QUEENS, NY, 11105, UNITED STATES 
-        %br/
-        %span(646) 665-7599 
-        %span 
-          %a{:href => "mailto:INFO@NY.CAIR.COM"}INFO@NY.CAIR.COM
     .medium-8.column.centered
       %ul.menu.expanded
         %li
@@ -43,8 +11,25 @@
           %h5
             %strong
               = link_to 'Frequently Asked Questions', faq_path
+
+  .row.content-foot
+    .medium-12.column.centered
+      %p{style: "margin-bottom: 0px;"}
+        %small
+          COUNCIL ON AMERICAN-ISLAMIC RELATIONS, 46-01 20TH AVENUE, QUEENS, NY, 11105, UNITED STATES 
+    .medium-6.column.centered
+      %ul.menu.expanded
+        %li
+          %a{:href => "tel:6466657599", style: "padding-top: 0px;"}
+            %small
+              (646) 665-7599 
+        %li
+          %a{:href => "mailto:INFO@NY.CAIR.COM", style: "padding-top: 0px;"}
+            %small
+              INFO@NY.CAIR.COM
     .medium-4.column.centered
       %hr/
     .medium-12.column.centered
       %p
-        Copyright© 2016, Council on American-Islamic Relations (CAIR) New York. All rights reserved. CAIR® is a registered trademark.
+        %small
+          Copyright© 2016, Council on American-Islamic Relations (CAIR) New York. All rights reserved. CAIR® is a registered trademark.
