@@ -25,6 +25,11 @@
 // Plugins
 @import 'nprogress';
 
+.centered.centered{
+  margin: 0 auto;
+  float: none;
+}
+
 #phone-input,
 #phone-input-submit{
   height: 5vh;
