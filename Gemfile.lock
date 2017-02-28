@@ -132,6 +132,9 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
     grit (2.0.0)
       diff-lcs (>= 1.1.2)
       mime-types (>= 1.15)
@@ -521,6 +524,7 @@ DEPENDENCIES
   font-awesome-rails
   foundation-rails
   friendly_id (~> 5.1.0)
+  globalize (~> 5.0.0)
   guard-rspec
   haml-rails
   httparty

@@ -1,21 +1,22 @@
 #example-menu.top-bar
-  .top-bar-left
-    %ul.menu
-      %li
+  .row
+    .top-bar-left
+      %ul.menu
+        %li
+          - if user_signed_in?
+            = link_to user_root_path do
+              = image_tag 'logo.png', class: "logo-image"
+          - else
+            = link_to root_path do
+              = image_tag 'logo.png', class: "logo-image"
+    .top-bar-right
+      %ul.menu
         - if user_signed_in?
-          = link_to user_root_path do
-            = image_tag 'logo.png', style: "width: 50%;"
+          - if current_user.is_admin?
+            %li= link_to I18n.t('admin.link'), rails_admin_path, data: {"no-turbolink" => true}
+          %li= link_to I18n.t('account.edit.link'), edit_user_registration_path
+          %li= link_to I18n.t('auth.edit.link'), user_authentications_path(current_user)
+          %li= link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
         - else
-          = link_to root_path do
-            = image_tag 'logo.png', style: "width: 50%;"
-  .top-bar-right
-    %ul.menu
-      - if user_signed_in?
-        - if current_user.is_admin?
-          %li= link_to I18n.t('admin.link'), rails_admin_path, data: {"no-turbolink" => true}
-        %li= link_to I18n.t('account.edit.link'), edit_user_registration_path
-        %li= link_to I18n.t('auth.edit.link'), user_authentications_path(current_user)
-        %li= link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
-      - else
-        %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
-        %li= link_to I18n.t('auth.login.link'), new_user_session_path
+          %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
+          %li= link_to I18n.t('auth.login.link'), new_user_session_path

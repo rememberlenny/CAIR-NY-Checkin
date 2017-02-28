@@ -9,7 +9,10 @@
 
 .controller__pages.action__home .top-bar{
   margin: 0px;
-  display: none;
+}
+
+.logo-image{
+  max-width: 90px;
 }
 
 // Core
@@ -82,10 +85,6 @@
 
 .white-bg{
   background: white;
-}
-
-.top-bar{
-  border-bottom: 1px solid #dbdbdb;
 }
 
 .content-container{

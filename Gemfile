@@ -21,6 +21,7 @@ gem "dotenv-rails", require: "dotenv/rails-now"
 gem "instagram"
 
 gem 'shortener'
+gem 'globalize', '~> 5.0.0'
 
 gem "country_select"
 gem "fastimage"

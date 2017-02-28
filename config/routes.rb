@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   match '/error' => 'pages#error', via: [:get, :post], as: 'error_page'
   get '/terms' => 'pages#terms', as: 'terms'
   get '/privacy' => 'pages#privacy', as: 'privacy'
+  get '/about' => 'pages#about', as: 'about'
+  get '/faq' => 'pages#faq', as: 'faq'
   
   post '/b/sms' => 'switchboard#sms', as: 'switchboard'
 

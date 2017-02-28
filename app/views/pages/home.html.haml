@@ -3,37 +3,51 @@
   .medium-12
     .content.row
       .medium-8.column.centered
-        %h1.text-center
+        %h2.text-center
           Welcome to CAIR-NY Check-In
-        %p.text-center
-          This resource is for visa holders and immigrants who have an interview scheduled with the DHS.
-        %h3.text-center
-          We collect:
         .row
-          .medium-6.centered.column
-            %ul.actions
-              %li
-                Your contact information
-              %li
-                Your emergency contact information
-              %li
-                Your DHS appointment details
-        %h4.text-center
-          If you are detained after your DHS interview, we will get in touch with your emergency contact and our legal team.
+          .medium-12.column
+            %h5.text-center
+              This resource is for visa holders and immigrants who have an interview scheduled with the DHS.
 
         .panel.callout.primary.text-center
 
           %h4
-            Please give us your mobile phone number. 
+            %strong
+              Please give us your mobile phone number. 
           %h5
             We'll send you a text message with a code to verify your number
           
-          .input-group
-            %input.input-group-field{:type => "number"}/
-            .input-group-button
-              %input.button.large.primary{:type => "submit", :value => "Submit"}/
+          .row
+            .medium-8.centered.column
+              .input-group
+                %input.input-group-field{:type => "tel"}/
+                .input-group-button
+                  %input.button.large.primary{:type => "submit", :value => "Submit"}/
 
 
           %h5
             %i
               Already entered in your information via SMS? Enter your cell phone number above to update this information.
+        .row
+          .medium-5.column
+            %h3.text-right
+              We collect:
+          .medium-7.column
+            .row
+              .medium-12.centered.column
+                %ul.actions
+                  %li
+                    Your contact information
+                  %li
+                    Your emergency contact information
+                  %li
+                    Your DHS appointment details
+        .row
+          .medium-5.column.centered
+            %hr/
+        .row
+          .medium-11.centered.column
+            %h4.text-center
+              %strong
+                If you are detained after your DHS interview, we will get in touch with your emergency contact and our legal team.

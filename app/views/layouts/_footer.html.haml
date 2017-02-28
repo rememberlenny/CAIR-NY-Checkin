@@ -1,4 +1,11 @@
-/ %footer.page__footer
-/   %ul.menu
-/     %li= link_to 'Terms', terms_path
-/     %li= link_to 'Privacy', privacy_path
+%footer.page__footer.text-center
+  .medium-8.column.centered
+    %ul.menu.expanded
+      %li
+        %h5
+          %strong
+            = link_to 'About Cair-NY', about_path
+      %li
+        %h5
+          %strong
+            = link_to 'Frequently Asked Questions', faq_path
