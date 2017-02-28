@@ -4,7 +4,9 @@ class TextExchangeController < ApplicationController
 
   def confirm
     phone_number = params[:telephone]
-    if Phonelib.valid?(phone_number)
+    if phone_number.empty?
+      redirect_to root_path, :flash => { :error => "Please submit a phone number." }
+    elsif Phonelib.valid?(phone_number)
       @params = params
     else
       redirect_to root_path, :flash => { :error => "#{phone_number} is an invalid number." }
