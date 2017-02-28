@@ -34,7 +34,7 @@ class TextExchangeController < ApplicationController
     token = params[:auth_code]
     hex = params[:hex_code]
     if Checkin.validate_token(token, hex)
-      redirect_to next_step_path(id: checkin.hex_id), :flash => { :notice => "Invalid authorization code." }
+      redirect_to next_step_path(id: hex), :flash => { :notice => "Invalid authorization code." }
     else
       redirect_to confirm_check_path(id: hex), :flash => { :error => "Invalid authorization code." }
     end
