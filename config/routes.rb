@@ -1,5 +1,15 @@
 # Route prefixes use a single letter to allow for vanity urls of two or more characters
 Rails.application.routes.draw do
+  get 'text_exchange/confirm'
+
+  get 'text_exchange/additional_information'
+
+  get 'text_exchange/thanks'
+
+  get 'text_exchange/checkin'
+
+  get 'text_exchange/alt_confirm'
+
   get "preview/:number" => 'preview_message#show', as: "preview_message" if ENV['ALLOW_MESSAGE_PREVIEW'].present?
   post "preview/:number" => 'preview_message#submit', as: "preview_submit" if ENV['ALLOW_MESSAGE_PREVIEW'].present?
 
