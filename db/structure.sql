@@ -107,7 +107,8 @@ CREATE TABLE checkins (
     phone_number character varying,
     hex_id character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    status character varying
 );
 
 
@@ -540,4 +541,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170110210255');
 INSERT INTO schema_migrations (version) VALUES ('20170110220058');
 
 INSERT INTO schema_migrations (version) VALUES ('20170228213633');
+
+INSERT INTO schema_migrations (version) VALUES ('20170228214550');
 
