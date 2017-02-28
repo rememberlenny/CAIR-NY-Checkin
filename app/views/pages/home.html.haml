@@ -18,12 +18,14 @@
           %h5
             We'll send you a text message with a code to verify your number
           
-          .row
-            .medium-8.centered.column
-              .input-group.input-pad
-                %input.input-group-field{:type => "tel", placeholder: "123-456-7890"}/
-                .input-group-button
-                  %input.button.large.primary{:type => "submit", :value => "Submit"}/
+
+          = simple_form_for "" do |f|
+            .row
+              .medium-8.centered.column
+                .input-group.input-pad
+                  = f.input_field :telephone, label: false, :type => "tel", placeholder: "123-456-7890", class: "input-group-field"
+                  .input-group-button
+                    = f.button :submit, { class: "button large primary", value: "Submit"}
 
 
           %h5
