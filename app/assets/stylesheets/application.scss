@@ -7,6 +7,10 @@
 //= require rails_admin
 //= require foundation_and_overrides
 
+.vertical-pad{
+  margin-top: 2em;
+}
+
 .top-bar{
     background-color: #eff1f5;
     margin-bottom: 30px;
@@ -129,6 +133,9 @@ footer li{
 .text-bot .input-group-field,
 .text-bot .input-group-button input{
   height: 3.08333rem;
+}
+.text-bot input{
+  font-size: 120%;
 }
 .text-bot.callout{
     margin-top: 30px;

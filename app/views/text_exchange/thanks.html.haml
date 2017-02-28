@@ -1,2 +1,28 @@
-%h1 TextExchange#thanks
-%p Find me in app/views/text_exchange/thanks.html.haml
+.row
+  .medium-6.column.centered.text-center
+    %h2 Thank you!
+    %h3 We will reach out to you before your scheduled DHS interview
+.content.row
+  .medium-8.column.centered
+    .row
+      .medium-8.centered.column.text-bot
+        .input-group.input-pad
+          %input.input-group-field{:type => "text", placeholder: "XXXXXX"}/
+          .input-group-button
+            %input.button.large.primary{:type => "submit", :value => "Submit"}/
+.row
+  .medium-2.column.centered
+    %hr/
+
+.row
+  .medium-12.column.text-center
+    %h4
+      If you did not receive a text:
+
+  .medium-12.column.text-center
+    %h5
+      = link_to "" do
+        Text a new authorization code
+    %h5
+      = link_to root_path do
+        Update my phone number
