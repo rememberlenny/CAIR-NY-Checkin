@@ -12,10 +12,10 @@ class TextExchangeController < ApplicationController
       redirect_to root_path, :flash => { :error => "Please submit a phone number." }
     elsif Phonelib.valid?(phone_number)
       checkin = Checkin.generate_pair(phone_number)
-      if checkin.status == "new"
-        redirect_to confirm_check_path(id: checkin.hex_id)
-      elsif checkin.status == "verified"
+      if checkin.status == "verified"
         redirect_to next_step_path(id: checkin.hex_id)
+      else
+        redirect_to confirm_check_path(id: checkin.hex_id)
       end
     else
       redirect_to root_path, :flash => { :error => "#{phone_number} is an invalid number." }

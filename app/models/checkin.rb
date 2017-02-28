@@ -9,6 +9,8 @@ class Checkin < ActiveRecord::Base
     else
       checkin = Checkin.where(phone_number: sanitized_phone).first
     end
+
+
     checkin
   end
 end
