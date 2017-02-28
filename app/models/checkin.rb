@@ -11,6 +11,26 @@ class Checkin < ActiveRecord::Base
     token 
   end
 
+  def self.validate_token(token, hex)
+    checkin = Checkin.where(hex_id: hex)
+    if checkin.count == 0
+      return false
+    else
+      checkin = checkin.first
+    end
+    
+    checkin_id = checkin.id
+    auth = AuthToken.where(token: token, checkin_id: checkin_id)
+    
+    if auth.count == 1
+      checkin.status = "valid"
+      checkin.save
+      true
+    else
+      false
+    end
+  end
+
   def self.generate_pair(phone)
     phone = Phonelib.parse(phone)
     url_id = SecureRandom.hex
