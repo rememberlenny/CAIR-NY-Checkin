@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   get '/checkin' => 'text_exchange#checkin', as: 'checkin'
   get '/confirm' => 'text_exchange#confirm', as: 'confirm'
+  post '/confirm' => 'text_exchange#confirm', as: 'confirm_post'
   get '/required_information' => 'text_exchange#additional_information', as: 'required_information'
   get '/thanks' => 'text_exchange#thanks', as: 'thanks'
   get '/survey' => 'text_exchange#alt_confirm', as: 'survey'

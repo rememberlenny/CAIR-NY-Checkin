@@ -23,6 +23,8 @@ gem "instagram"
 gem 'shortener'
 gem 'globalize', '~> 5.0.0'
 
+gem 'phonelib'
+
 gem "country_select"
 gem "fastimage"
 gem "image_processing"
