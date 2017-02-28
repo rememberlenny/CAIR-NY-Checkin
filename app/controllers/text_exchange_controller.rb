@@ -23,6 +23,7 @@ class TextExchangeController < ApplicationController
   end
 
   def confirm_check
+    Checkin.send_token(params[:id])
   end
 
   def additional_information

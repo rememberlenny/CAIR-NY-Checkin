@@ -1,4 +1,13 @@
 class Checkin < ActiveRecord::Base
+  def self.send_token(hex)
+    checkin = Checkin.where(phone_number: hex)
+    checkin_id = checkin.first.id
+    token_key = rand(9999).to_s.center(4, rand(9).to_s)
+    token = AuthToken.new(checkin_id: checkin_id, token: token_key)
+    token.save
+    token 
+  end
+
   def self.generate_pair(phone)
     phone = Phonelib.parse(phone)
     url_id = SecureRandom.hex
@@ -9,7 +18,6 @@ class Checkin < ActiveRecord::Base
     else
       checkin = Checkin.where(phone_number: sanitized_phone).first
     end
-
 
     checkin
   end
