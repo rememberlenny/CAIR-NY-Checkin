@@ -23,7 +23,15 @@ class TextExchangeController < ApplicationController
   end
 
   def confirm_check
-    Checkin.send_token(params[:id])
+    @hex = params[:id]
+    state = Checkin.send_token(@hex)
+    if state == false
+      redirect_to root_path, :flash => { :error => "This url does not exist." }
+    end
+  end
+
+  def check_token_authenticity
+    redirect_to confirm_check_path(id: 'xxx'), :flash => { :error => "Invalid authorization code." }
   end
 
   def additional_information

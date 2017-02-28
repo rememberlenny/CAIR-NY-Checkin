@@ -1,9 +1,9 @@
 # Route prefixes use a single letter to allow for vanity urls of two or more characters
 Rails.application.routes.draw do
   
+  post '/check_token_authenticity' => 'text_exchange#check_token_authenticity', as: 'check_token_authenticity'
   post '/confirm' => 'text_exchange#confirm', as: 'confirm_post'
   get '/next_step' => 'text_exchange#next_step', as: 'next_step'
-  get '/confirm' => 'text_exchange#confirm', as: 'confirm'
   get '/confirm_check/:id' => 'text_exchange#confirm_check', as: 'confirm_check'
   
   get '/checkin' => 'text_exchange#checkin', as: 'checkin'

@@ -6,14 +6,18 @@
     %h3 We just texted you an authorization code
     %p
       Please enter it below
-.content.row
-  .medium-8.column.centered
-    .row
-      .medium-8.centered.column.text-bot
-        .input-group.input-pad
-          %input.input-group-field{:type => "text", placeholder: "XXXXXX"}/
-          .input-group-button
-            %input.button.large.primary{:type => "submit", :value => "Submit"}/
+
+= simple_form_for "", url: check_token_authenticity_path do |f|
+  = f.hidden_field :auth_code, value: @hex
+  .content.row
+    .medium-8.column.centered
+      .row
+        .medium-8.centered.column.text-bot
+          .input-group.input-pad
+            = f.input_field :auth_code, label: false, :type => "text", placeholder: "XXXX", class: "input-group-field"
+            .input-group-button
+              = f.button :submit, { class: "button large primary", value: "Submit"}
+              
 .row
   .medium-2.column.centered
     %hr/
