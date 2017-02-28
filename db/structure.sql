@@ -99,6 +99,38 @@ ALTER SEQUENCE authentications_id_seq OWNED BY authentications.id;
 
 
 --
+-- Name: checkins; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE checkins (
+    id integer NOT NULL,
+    phone_number character varying,
+    hex_id character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: checkins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE checkins_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: checkins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE checkins_id_seq OWNED BY checkins.id;
+
+
+--
 -- Name: conversation_responses; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -301,6 +333,13 @@ ALTER TABLE ONLY authentications ALTER COLUMN id SET DEFAULT nextval('authentica
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY checkins ALTER COLUMN id SET DEFAULT nextval('checkins_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY conversation_responses ALTER COLUMN id SET DEFAULT nextval('conversation_responses_id_seq'::regclass);
 
 
@@ -339,6 +378,14 @@ ALTER TABLE ONLY accounts
 
 ALTER TABLE ONLY authentications
     ADD CONSTRAINT authentications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: checkins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY checkins
+    ADD CONSTRAINT checkins_pkey PRIMARY KEY (id);
 
 
 --
@@ -491,4 +538,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170110190610');
 INSERT INTO schema_migrations (version) VALUES ('20170110210255');
 
 INSERT INTO schema_migrations (version) VALUES ('20170110220058');
+
+INSERT INTO schema_migrations (version) VALUES ('20170228213633');
 
