@@ -20,9 +20,9 @@ class Checkin < ActiveRecord::Base
     end
     
     checkin_id = checkin.id
-    auth = AuthToken.where(token: token, checkin_id: checkin_id)
+    auth = AuthToken.where(checkin_id: checkin_id).last
     
-    if auth.count == 1
+    if auth.token == token
       checkin.status = "valid"
       checkin.save
       true
