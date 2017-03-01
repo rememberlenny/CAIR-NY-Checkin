@@ -18,6 +18,9 @@ class TextExchangeController < ApplicationController
     end
   end
 
+  def addition_information_update
+  end
+  
   def confirm
     phone_number = params[:telephone]
     if phone_number && phone_number.empty?

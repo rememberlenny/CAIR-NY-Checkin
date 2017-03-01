@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   
   post '/check_token_authenticity' => 'text_exchange#check_token_authenticity', as: 'check_token_authenticity'
+  post '/addition_information_update' => 'text_exchange#addition_information_update', as: 'addition_information_update'
   post '/confirm' => 'text_exchange#confirm', as: 'confirm_post'
   get '/next_step/:id' => 'text_exchange#next_step', as: 'next_step'
   get '/confirm_check/:id' => 'text_exchange#confirm_check', as: 'confirm_check'
