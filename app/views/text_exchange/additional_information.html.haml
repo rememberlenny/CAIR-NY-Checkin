@@ -4,7 +4,7 @@
     %h3 We need also need the following information for the check-in
 
 
-= simple_form_for :checkin, url: addition_information_update_path do |f|
+= simple_form_for @checkin, url: addition_information_update_path do |f|
   = f.hidden_field :hex_id, value: @hex
   .content.row
     .medium-8.column.centered

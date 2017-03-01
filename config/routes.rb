@@ -2,14 +2,14 @@
 Rails.application.routes.draw do
   
   post '/check_token_authenticity' => 'text_exchange#check_token_authenticity', as: 'check_token_authenticity'
-  post '/addition_information_update' => 'text_exchange#addition_information_update', as: 'addition_information_update'
+  patch '/addition_information_update' => 'text_exchange#addition_information_update', as: 'addition_information_update'
   post '/confirm' => 'text_exchange#confirm', as: 'confirm_post'
   get '/next_step/:id' => 'text_exchange#next_step', as: 'next_step'
   get '/confirm_check/:id' => 'text_exchange#confirm_check', as: 'confirm_check'
   
   get '/checkin' => 'text_exchange#checkin', as: 'checkin'
   get '/required_information/:id' => 'text_exchange#additional_information', as: 'required_information'
-  get '/thanks' => 'text_exchange#thanks', as: 'thanks'
+  get '/thanks/:id' => 'text_exchange#thanks', as: 'thanks'
   get '/survey' => 'text_exchange#alt_confirm', as: 'survey'
 
   get "preview/:number" => 'preview_message#show', as: "preview_message" if ENV['ALLOW_MESSAGE_PREVIEW'].present?
