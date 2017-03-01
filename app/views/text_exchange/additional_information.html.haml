@@ -3,68 +3,70 @@
     %h2 Great!
     %h3 We need also need the following information for the check-in
 
-.content.row
-  .medium-8.column.centered
-    .row
-      .medium-6.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Your Full Name
-          %input.input-group-field{:type => "text", placeholder: "John Doe"}/
-      .medium-6.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Address (to verify your identity)
-          %input.input-group-field{:type => "text", placeholder: "123 City St"}/
 
-.content.row.vertical-pad
-  .medium-8.column.centered
-    .row
-      .medium-12.column.text-bot.text-center
-        %h4
-          DHS Interview Information
-    .row
-      .medium-5.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Interview Location
-          %input.input-group-field{:type => "text", placeholder: "Address"}/
-      
-      .medium-4.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Interview Date
-          %input.input-group-field{:type => "date"}/
-      
-      .medium-3.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Interview Time
-          %input.input-group-field{:type => "time"}/
+= simple_form_for "", url: check_token_authenticity_path do |f|
+  .content.row
+    .medium-8.column.centered
+      .row
+        .medium-6.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Your Full Name
+            = f.input_field :full_name, label: false, :type => "text", placeholder: "John Doe", class: "input-group-field"
+        .medium-6.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Address (to verify your identity)
+            = f.input_field :address, label: false, :type => "text", placeholder: "123 City St", class: "input-group-field"
 
-.content.row.vertical-pad
-  .medium-8.column.centered
-    .row
-      .medium-12.column.text-bot.text-center
-        %h4
-          Primary Contact Information
-        %h5
-          We will try to get in touch with this person if you do not check-in with (xx) hours of your appointment.
-    .row
-      .medium-6.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Primary Contact Full Name
-          %input.input-group-field{:type => "text", placeholder: "Jane Doe"}/
-      
-      .medium-6.column.text-bot
-        .input-group.input-pad
-          %label{:for => ""}
-            Primary Contact Mobile Phone
-          %input.input-group-field{:type => "tel", placeholder: "123-456-7890"}/
+  .content.row.vertical-pad
+    .medium-8.column.centered
+      .row
+        .medium-12.column.text-bot.text-center
+          %h4
+            DHS Interview Information
+      .row
+        .medium-5.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Interview Location
+            = f.input_field :interview_location, label: false, :type => "text", placeholder: "Address", class: "input-group-field"
+        
+        .medium-4.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Interview Date
+            = f.input_field :interview_date, label: false, :type => "date", class: "input-group-field"
+        
+        .medium-3.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Interview Time
+            = f.input_field :interview_time, label: false, :type => "time", class: "input-group-field"
 
-.content.row.vertical-pad
-  .medium-5.column.centered.text-center
-    %a{:href => "", class: "expanded large button primary"}
-      Submit
+  .content.row.vertical-pad
+    .medium-8.column.centered
+      .row
+        .medium-12.column.text-bot.text-center
+          %h4
+            Primary Contact Information
+          %h5
+            We will try to get in touch with this person if you do not check-in with (xx) hours of your appointment.
+      .row
+        .medium-6.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Primary Contact Full Name
+            = f.input_field :primary_contact_name, label: false, :type => "text", placeholder: "Jane Doe", class: "input-group-field"
+        
+        .medium-6.column.text-bot
+          .input-group.input-pad
+            %label{:for => ""}
+              Primary Contact Mobile Phone
+            = f.input_field :primary_contact_mobile_phone, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
+
+  .content.row.vertical-pad
+    .medium-5.column.centered.text-center
+     = f.button :submit, { class: "expanded large button primary", value: "Submit"}
+        Submit
       

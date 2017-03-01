@@ -3,7 +3,19 @@ class TextExchangeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def next_step
-    render text: "blah"
+    @hex = params[:id]
+    checkin = Checkin.where(hex_id: @hex).last
+
+
+    if checkin.status == "valid"
+      redirect_to required_information_path
+    elsif checkin.status == "complete"
+
+    elsif checkin.status == "new"
+
+    else
+
+    end
   end
 
   def confirm
@@ -34,7 +46,7 @@ class TextExchangeController < ApplicationController
     token = params[:auth_code]
     hex = params[:hex_code]
     if Checkin.validate_token(token, hex)
-      redirect_to next_step_path(id: hex), :flash => { :notice => "Invalid authorization code." }
+      redirect_to next_step_path(id: hex)
     else
       redirect_to confirm_check_path(id: hex), :flash => { :error => "Invalid authorization code." }
     end
