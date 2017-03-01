@@ -7,6 +7,7 @@ class Checkin < ActiveRecord::Base
     checkin_id = checkin.first.id
     token_key = rand(9999).to_s.center(4, rand(9).to_s)
     token = AuthToken.new(checkin_id: checkin_id, token: token_key)
+
     token.save
     token 
   end
@@ -35,11 +36,14 @@ class Checkin < ActiveRecord::Base
     phone = Phonelib.parse(phone)
     url_id = SecureRandom.hex
     sanitized_phone = phone.sanitized 
-    if Checkin.where(phone_number: sanitized_phone).count == 0
-      checkin = Checkin.new(phone_number: sanitized_phone, hex_id: url_id, status: "new")
+    if Account.where(phone: sanitized_phone).count == 0
+      account = Account.find_or_create_by(phone: sanitized_phone)
+      checkin = Checkin.new(account_id: account.id, hex_id: url_id, status: "new")
       checkin.save
+      account.save
     else
-      checkin = Checkin.where(phone_number: sanitized_phone).first
+      account = Account.where(phone: sanitized_phone).first
+      checkin = Checkin.where(account_id: account.id).first
     end
 
     checkin

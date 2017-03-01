@@ -136,7 +136,6 @@ ALTER SEQUENCE authentications_id_seq OWNED BY authentications.id;
 
 CREATE TABLE checkins (
     id integer NOT NULL,
-    phone_number character varying,
     hex_id character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
@@ -147,7 +146,8 @@ CREATE TABLE checkins (
     interview_date character varying,
     interview_time character varying,
     primary_contact_name character varying,
-    primary_contact_mobile_phone character varying
+    primary_contact_mobile_phone character varying,
+    account_id integer
 );
 
 
@@ -601,4 +601,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170228214550');
 INSERT INTO schema_migrations (version) VALUES ('20170228215937');
 
 INSERT INTO schema_migrations (version) VALUES ('20170301065743');
+
+INSERT INTO schema_migrations (version) VALUES ('20170301154443');
 
