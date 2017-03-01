@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/confirm_check/:id' => 'text_exchange#confirm_check', as: 'confirm_check'
   
   get '/checkin' => 'text_exchange#checkin', as: 'checkin'
-  get '/required_information' => 'text_exchange#additional_information', as: 'required_information'
+  get '/required_information/:id' => 'text_exchange#additional_information', as: 'required_information'
   get '/thanks' => 'text_exchange#thanks', as: 'thanks'
   get '/survey' => 'text_exchange#alt_confirm', as: 'survey'
 

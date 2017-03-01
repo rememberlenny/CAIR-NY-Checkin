@@ -8,7 +8,7 @@ class TextExchangeController < ApplicationController
 
 
     if checkin.status == "valid"
-      redirect_to required_information_path
+      redirect_to required_information_path(id: checkin.hex_id)
     elsif checkin.status == "complete"
 
     elsif checkin.status == "new"
@@ -19,8 +19,14 @@ class TextExchangeController < ApplicationController
   end
 
   def addition_information_update
+    @hex = params[:checkin][:hex_id]
+    checkin = Checkin.where(hex_id: @hex).last
+    checkin.assign_attributes(params[:checkin].permit(:full_name, :address, :interview_location, :interview_date, :interview_time, :primary_contact_name, :primary_contact_mobile_phone))
+    checkin.save
+
+    redirect_to next_step_path(id: @hex)
   end
-  
+
   def confirm
     phone_number = params[:telephone]
     if phone_number && phone_number.empty?
@@ -56,6 +62,7 @@ class TextExchangeController < ApplicationController
   end
 
   def additional_information
+    @hex = params[:id]
   end
 
   def thanks
