@@ -1,12 +1,14 @@
 class Checkin < ActiveRecord::Base
   def self.send_token(hex)
-    checkin = Checkin.where(hex_id: hex)
-    if checkin.count == 0
+    checkins = Checkin.where(hex_id: hex)
+    if checkins.count == 0
       return false
     end
-    checkin_id = checkin.first.id
+    checkin = checkins.first
     token_key = rand(9999).to_s.center(4, rand(9).to_s)
-    token = AuthToken.new(checkin_id: checkin_id, token: token_key)
+    token = AuthToken.new(checkin_id: checkin.id, token: token_key)
+
+    Message.create_message(checkin.account_id, "Your authorization token is: #{token_key}", true)
 
     token.save
     token 

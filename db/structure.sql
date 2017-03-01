@@ -147,7 +147,7 @@ CREATE TABLE checkins (
     interview_time character varying,
     primary_contact_name character varying,
     primary_contact_mobile_phone character varying,
-    account_id integer
+    account_id uuid
 );
 
 
@@ -603,4 +603,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170228215937');
 INSERT INTO schema_migrations (version) VALUES ('20170301065743');
 
 INSERT INTO schema_migrations (version) VALUES ('20170301154443');
+
+INSERT INTO schema_migrations (version) VALUES ('20170301154444');
 
