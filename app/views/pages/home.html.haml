@@ -28,10 +28,12 @@
           = simple_form_for "", url: confirm_post_path do |f|
             .row
               .medium-8.centered.column
-                .input-group.input-pad
+                .input-pad
                   = f.input_field :telephone, label: false, :type => "tel", placeholder: "123-456-7890", class: "input-group-field"
-                  .input-group-button
-                    = f.button :submit, { class: "button large primary", value: "Submit"}
+            .row
+              .medium-5.centered.column
+                .input-button
+                  = f.button :submit, { class: "expanded button  primary", value: "Submit"}
 
 
           %h5
