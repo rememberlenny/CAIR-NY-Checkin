@@ -140,14 +140,19 @@ CREATE TABLE checkins (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     status character varying,
-    full_name character varying,
-    address text,
     interview_location character varying,
     interview_date character varying,
     interview_time character varying,
-    primary_contact_name character varying,
-    primary_contact_mobile_phone character varying,
-    account_id uuid
+    account_id uuid,
+    name_first character varying,
+    name_middle character varying,
+    name_last character varying,
+    address_line_one character varying,
+    address_line_two character varying,
+    address_city character varying,
+    address_state character varying,
+    address_zip character varying,
+    alt_phone_number character varying
 );
 
 
@@ -605,4 +610,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170301065743');
 INSERT INTO schema_migrations (version) VALUES ('20170301154443');
 
 INSERT INTO schema_migrations (version) VALUES ('20170301154444');
+
+INSERT INTO schema_migrations (version) VALUES ('20170302154549');
 

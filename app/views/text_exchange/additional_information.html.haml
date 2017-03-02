@@ -12,18 +12,22 @@
           .input-group.input-pad
             %label{:for => ""}.primary-text
               Your Full Name
+            %p.primary-text
+              (as it appears on legal documents)
             = f.input_field :full_name, label: false, :type => "text", placeholder: "John Doe", class: "input-group-field"
         .medium-6.column.text-bot
           .input-group.input-pad
             %label{:for => ""}.primary-text
-              Address (to verify your identity)
+              Address
+            %p.primary-text
+              (to verify your identity)
             = f.input_field :address, label: false, :type => "text", placeholder: "123 City St", class: "input-group-field"
 
   .content.row.vertical-pad
     .medium-8.column.centered
       .row
         .medium-12.column.text-bot.text-center
-          %h4
+          %h4.primary-text
             DHS Interview Information
       .row
         .medium-5.column.text-bot
@@ -50,7 +54,7 @@
         .medium-12.column.text-bot.text-center
           %h4
             Primary Contact Information
-          %h5
+          %p.primary-text
             We will try to get in touch with this person if you do not check-in with (xx) hours of your appointment.
       .row
         .medium-6.column.text-bot
@@ -65,6 +69,15 @@
               Primary Contact Mobile Phone
             = f.input_field :primary_contact_mobile_phone, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
 
+    .content.row.vertical-pad
+      .medium-8.column.centered
+        .row
+          .medium-12.column.text-bot.text-center
+            %h4
+              Alternate Phone Number (Optional)
+            %p.primary-text
+              Do you have another personal phone number? If so, add it here
+            = f.input_field :alt_phone_number, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
   .content.row.vertical-pad
     .medium-5.column.centered.text-center
       = f.button :submit, { class: "expanded large button primary", value: "Submit"}
