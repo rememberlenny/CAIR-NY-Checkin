@@ -21,7 +21,7 @@ class TextExchangeController < ApplicationController
   def addition_information_update
     @hex = params[:checkin][:hex_id]
     checkin = Checkin.where(hex_id: @hex).last
-    checkin.assign_attributes(params[:checkin].permit(:full_name, :address, :interview_location, :interview_date, :interview_time, :primary_contact_name, :primary_contact_mobile_phone))
+    checkin.assign_attributes(params[:checkin].permit(:name_first, :name_middle, :name_last, :address_line_one, :address_line_two, :address_city, :address_state, :address_zip, :interview_location, :interview_date, :interview_time, :contact_one_name_first, :contact_one_name_last, :contact_one_phone_number, :contact_one_prefered_languag, :alt_phone_number))
     
     checkin.status = "complete"
     
