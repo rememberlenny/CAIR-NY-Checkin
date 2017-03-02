@@ -15,10 +15,16 @@
       .row
         .medium-8.centered.column.text-bot
           .input-group.input-pad
-            = f.input_field :auth_code, label: false, :type => "text", placeholder: "XXXX", class: "input-group-field"
-            .input-group-button
-              = f.button :submit, { class: "button large primary", value: "Submit"}
-              
+            .row
+              .medium-8.centered.column
+                .input-pad
+                  = f.input_field :auth_code, label: false, :type => "text", placeholder: "XXXX", class: "input-group-field"
+            .row
+              .medium-5.centered.column
+                .input-button
+                  = f.button :submit, { class: "button large primary", value: "Submit"}
+
+
 .row
   .medium-2.column.centered
     %hr/
