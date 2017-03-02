@@ -1,7 +1,6 @@
 .row
   .medium-6.column.centered.text-center
-    %h2 Great!
-    %h3 We need also need the following information for the check-in
+    %h2 Great! We need also need the following information for the check-in
 
 
 = simple_form_for @checkin, url: addition_information_update_path do |f|
@@ -11,12 +10,12 @@
       .row
         .medium-6.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Your Full Name
             = f.input_field :full_name, label: false, :type => "text", placeholder: "John Doe", class: "input-group-field"
         .medium-6.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Address (to verify your identity)
             = f.input_field :address, label: false, :type => "text", placeholder: "123 City St", class: "input-group-field"
 
@@ -29,19 +28,19 @@
       .row
         .medium-5.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Interview Location
             = f.input_field :interview_location, label: false, :type => "text", placeholder: "Address", class: "input-group-field"
         
         .medium-4.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Interview Date
             = f.input_field :interview_date, label: false, :type => "date", class: "input-group-field"
         
         .medium-3.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Interview Time
             = f.input_field :interview_time, label: false, :type => "time", class: "input-group-field"
 
@@ -56,13 +55,13 @@
       .row
         .medium-6.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Primary Contact Full Name
             = f.input_field :primary_contact_name, label: false, :type => "text", placeholder: "Jane Doe", class: "input-group-field"
         
         .medium-6.column.text-bot
           .input-group.input-pad
-            %label{:for => ""}
+            %label{:for => ""}.primary-text
               Primary Contact Mobile Phone
             = f.input_field :primary_contact_mobile_phone, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
 

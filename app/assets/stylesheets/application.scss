@@ -30,7 +30,10 @@ footer .row.content-foot *{
 }
 
 .phone-image{
-  max-width: 170px;
+  max-width: 130px;
+  -ms-transform: rotate(-15deg);
+  -webkit-transform:rotate(-15deg);
+  transform: rotate(-15deg);
 }
 
 .content-foot{
