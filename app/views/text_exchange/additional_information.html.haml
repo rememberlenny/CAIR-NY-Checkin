@@ -77,7 +77,7 @@
             = f.input_field :interview_time, label: false, :type => "time", class: "input-group-field"
 
   .content.row.vertical-pad
-    .medium-8.column.centered
+    .medium-8.column.centered.text-center
       .row
         .medium-12.column.text-bot.text-center
           %h4.primary-text
@@ -89,13 +89,29 @@
           .input-group
             %h4.primary-text
               Primary Contact Full Name
-            = # f.input_field :primary_contact_name, label: false, :type => "text", placeholder: "Jane Doe", class: "input-group-field"
-        
+            = f.input_field :contact_one_name_first, label: false, :type => "text", placeholder: "First Name", class: "input-group-field"      
+      .row
         .medium-6.column.text-bot.centered
           .input-group
             %h4.primary-text
-              Primary Contact Mobile Phone
-            = # f.input_field :primary_contact_mobile_phone, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
+            = f.input_field :contact_one_name_last, label: false, :type => "text", placeholder: "Last Name", class: "input-group-field"
+        
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            %h4.primary-text
+              Mobile Phone
+            = f.input_field :contact_one_phone_number, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            %h4.primary-text
+              Preferred Language
+            = f.input_field :contact_one_prefered_languag, label: false, :type => "text", placeholder: "English", class: "input-group-field"
+
+
+
+
 
   .content.row.vertical-pad
     .medium-8.column.centered
