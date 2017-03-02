@@ -152,7 +152,15 @@ CREATE TABLE checkins (
     address_city character varying,
     address_state character varying,
     address_zip character varying,
-    alt_phone_number character varying
+    alt_phone_number character varying,
+    contact_one_name_first character varying,
+    contact_two_name_first character varying,
+    contact_one_name_last character varying,
+    contact_two_name_last character varying,
+    contact_one_phone_number character varying,
+    contact_two_phone_number character varying,
+    contact_one_prefered_languag character varying,
+    contact_two_prefered_languag character varying
 );
 
 
@@ -616,4 +624,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170302154549');
 INSERT INTO schema_migrations (version) VALUES ('20170302155904');
 
 INSERT INTO schema_migrations (version) VALUES ('20170302171727');
+
+INSERT INTO schema_migrations (version) VALUES ('20170302172714');
 
