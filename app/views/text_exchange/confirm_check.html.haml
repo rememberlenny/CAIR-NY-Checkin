@@ -3,7 +3,10 @@
     = image_tag "phonesms.png", class: "phone-image"
     %h3 We just texted you an authorization code
     %p
-      Please enter it below
+      This will ensure we are communicating with you.
+      %br/
+      Please enter your phone number below.
+
 
 = simple_form_for "", url: check_token_authenticity_path do |f|
   = f.hidden_field :hex_code, value: @hex
