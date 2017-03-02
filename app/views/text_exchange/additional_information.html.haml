@@ -1,27 +1,59 @@
 .row
-  .medium-6.column.centered.text-center
+  .medium-9.column.centered.text-center
     %h2 Great! We need also need the following information for the check-in
 
 
 = simple_form_for @checkin, url: addition_information_update_path do |f|
   = f.hidden_field :hex_id, value: @hex
-  .content.row
+  .content.row.text-center
     .medium-8.column.centered
       .row
-        .medium-6.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
-              Your Full Name
+        .medium-6.column.text-bot.centered
+          .input-group
+            %h4.primary-text
+              Name
             %p.primary-text
-              (as it appears on legal documents)
-            = f.input_field :full_name, label: false, :type => "text", placeholder: "John Doe", class: "input-group-field"
-        .medium-6.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
+              (as it appears on your legal documents)
+            = f.input_field :name_first, label: false, :type => "text", placeholder: "First", class: "input-group-field"
+
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            = f.input_field :name_middle, label: false, :type => "text", placeholder: "Middle", class: "input-group-field"
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            = f.input_field :name_last, label: false, :type => "text", placeholder: "Last", class: "input-group-field"
+
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            %h4.primary-text
               Address
             %p.primary-text
               (to verify your identity)
-            = f.input_field :address, label: false, :type => "text", placeholder: "123 City St", class: "input-group-field"
+            = f.input_field :address_line_one, label: false, :type => "text", placeholder: "Address Line 1", class: "input-group-field"
+
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            = f.input_field :address_line_two, label: false, :type => "text", placeholder: "Address Line 2", class: "input-group-field"
+
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            = f.input_field :address_city, label: false, :type => "text", placeholder: "City", class: "input-group-field"
+
+
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            = f.input_field :address_state, label: false, :type => "text", placeholder: "State", class: "input-group-field"
+
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
+            = f.input_field :address_zip, label: false, :type => "text", placeholder: "Zip Code", class: "input-group-field"
 
   .content.row.vertical-pad
     .medium-8.column.centered
@@ -30,54 +62,52 @@
           %h4.primary-text
             DHS Interview Information
       .row
-        .medium-5.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
-              Interview Location
+        .medium-6.column.text-bot.centered
+          .input-group
             = f.input_field :interview_location, label: false, :type => "text", placeholder: "Address", class: "input-group-field"
         
-        .medium-4.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
-              Interview Date
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
             = f.input_field :interview_date, label: false, :type => "date", class: "input-group-field"
         
-        .medium-3.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
-              Interview Time
+      .row
+        .medium-6.column.text-bot.centered
+          .input-group
             = f.input_field :interview_time, label: false, :type => "time", class: "input-group-field"
 
   .content.row.vertical-pad
     .medium-8.column.centered
       .row
         .medium-12.column.text-bot.text-center
-          %h4
+          %h4.primary-text
             Primary Contact Information
           %p.primary-text
             We will try to get in touch with this person if you do not check-in with (xx) hours of your appointment.
       .row
-        .medium-6.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
+        .medium-6.column.text-bot.centered
+          .input-group
+            %h4.primary-text
               Primary Contact Full Name
-            = f.input_field :primary_contact_name, label: false, :type => "text", placeholder: "Jane Doe", class: "input-group-field"
+            = # f.input_field :primary_contact_name, label: false, :type => "text", placeholder: "Jane Doe", class: "input-group-field"
         
-        .medium-6.column.text-bot
-          .input-group.input-pad
-            %label{:for => ""}.primary-text
+        .medium-6.column.text-bot.centered
+          .input-group
+            %h4.primary-text
               Primary Contact Mobile Phone
-            = f.input_field :primary_contact_mobile_phone, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
+            = # f.input_field :primary_contact_mobile_phone, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
 
-    .content.row.vertical-pad
-      .medium-8.column.centered
-        .row
-          .medium-12.column.text-bot.text-center
-            %h4
-              Alternate Phone Number (Optional)
-            %p.primary-text
-              Do you have another personal phone number? If so, add it here
-            = f.input_field :alt_phone_number, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
+  .content.row.vertical-pad
+    .medium-8.column.centered
+      .row
+        .medium-8.column.text-bot.text-center.centered
+          %h4.primary-text
+            Alternate Phone Number (Optional)
+          %p.primary-text
+            Do you have another personal phone number? If so, add it here
+      .row
+        .medium-6.column.text-bot.text-center.centered
+          = f.input_field :alt_phone_number, label: false, :type => "text", placeholder: "123-456-7890", class: "input-group-field"
   .content.row.vertical-pad
     .medium-5.column.centered.text-center
       = f.button :submit, { class: "expanded large button primary", value: "Submit"}
